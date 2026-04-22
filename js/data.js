@@ -1,5 +1,5 @@
 // =============================================
-// AstroSeeker — Content Database
+// Shambhava — Content Database
 // =============================================
 // To add a new daily post:
 // 1. Copy one of the blocks below

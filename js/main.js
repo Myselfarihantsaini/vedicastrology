@@ -1,5 +1,5 @@
 // =============================================
-// AstroSeeker — Main JavaScript
+// Shambhava — Main JavaScript
 // =============================================
 
 // ---- Animated Stars + Sacred Symbols Background ----
@@ -216,7 +216,7 @@ function renderSinglePost() {
     const post = postsData.find(p => p.id === postId);
 
     if (post) {
-        document.title = `${post.title} — AstroSeeker`;
+        document.title = `${post.title} — Shambhava`;
         singlePostContainer.innerHTML = `
             <header class="post-header">
                 <span class="category-badge mb-1" style="display:inline-block; position:relative;">${post.category}</span>
