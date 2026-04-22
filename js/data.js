@@ -9,28 +9,82 @@
 
 const postsData = [
     {
-        id: "saturn-return-meaning",
-        title: "The Saturn Return — Entering Spiritual Adulthood",
+        id: "venus-in-all-12-houses",
+        title: "Venus in All 12 Houses — Detailed Interpretation",
         date: "April 23, 2026",
-        excerpt: "Between ages 28 and 30, Saturn returns to the exact sign it occupied when you were born. It is astrology's most famous wake-up call, but it is not meant to break you—it is meant to build you.",
+        excerpt: "Venus represents attraction, love, pleasure, aesthetics, relationships, and how we connect. This is not just about romance — it is about your relationship with comfort, value, and connection itself.",
         content: `
-            <p>Between ages 28 and 30 (and again around 58-60), Saturn returns to the exact sign it occupied when you were born. This period is astrology's most famous wake-up call. But despite its fearsome reputation, the Saturn Return is not meant to break you—it is meant to build you.</p>
-            <p>Saturn is the planet of reality, time, karma, and structural integrity. For the first 28 years of your life, you operate under the illusion of infinite time. You make choices based on societal conditioning, parental expectations, and youthful experimentation. When Saturn returns, it audits your life to see if your foundation is strong enough to hold the weight of true adulthood.</p>
-            
-            <h3>What Happens During a Saturn Return?</h3>
-            <p>The Saturn Return acts as a cosmic checkpoint. Anything in your life that is out of alignment with your authentic karmic path will feel increasingly heavy, restrictive, or unsustainable.</p>
-            <ul>
-                <li><strong>Career:</strong> If you are in a job solely for money or prestige, Saturn will make the lack of purpose painfully obvious. Many change career paths entirely.</li>
-                <li><strong>Relationships:</strong> Weak relationships crumble under Saturn's pressure. However, strong relationships built on mutual respect and shared reality often solidify into marriage.</li>
-                <li><strong>Identity:</strong> The masks you wore to please others stop working. You are forced to define your own boundaries.</li>
-            </ul>
+            <p>Venus represents attraction, love, pleasure, aesthetics, relationships, and how we connect and receive. The house Venus occupies in the birth chart shows where this energy expresses most strongly and how the native experiences love, beauty, and emotional satisfaction in real life.</p>
+            <p>This is not just about romance — it is about your relationship with comfort, value, and connection itself.</p>
 
-            <h3>How to Navigate It</h3>
-            <p>The key to surviving and thriving during your Saturn Return is <strong>responsibility</strong>. Saturn rewards hard work, accountability, and maturity. If you resist reality, Saturn will force it upon you. If you accept the lessons, Saturn becomes the greatest builder of your life.</p>
-            <blockquote>"Saturn delays, but it does not deny."</blockquote>
-            <p>Don't rush the process. Take your time, get organized, strip away the unessential, and commit to the path that feels true, even if it is the harder road.</p>
+            <h3>Venus in the 1st House — Attraction becomes identity</h3>
+            <p>Venus in the 1st house makes charm part of your personality. You naturally draw attention without trying because your presence itself feels pleasant, balanced, and approachable. People notice you easily, not just for physical beauty but for the way you carry yourself — your tone, expressions, and overall aura.</p>
+            <p>You tend to move through life with a desire to be liked, and this can make you socially smooth, diplomatic, and adaptable. Relationships influence your identity strongly — how others respond to you shapes how you see yourself.</p>
+            <p>At a higher level, this placement gives grace, aesthetic intelligence, and natural magnetism. At a lower level, it can create dependency on validation, people-pleasing, or avoidance of conflict to maintain harmony.</p>
+
+            <h3>Venus in the 2nd House — Love through value, comfort, and security</h3>
+            <p>Here Venus expresses through resources and stability. You associate love with tangible experiences — food, gifts, financial comfort, and emotional security. You show affection by providing and receiving through material or sensory means.</p>
+            <p>Speech also becomes Venusian — you may have a pleasant voice, persuasive tone, or refined way of speaking. You value stability in relationships and prefer predictable, secure emotional environments.</p>
+            <p>At its best, this placement creates financial sense, loyalty, and grounded love. At its worst, it can create attachment to material validation or equating love with comfort alone.</p>
+
+            <h3>Venus in the 3rd House — Attraction through communication and interaction</h3>
+            <p>Venus in the 3rd house turns communication into charm. You flirt through words, build attraction through conversation, and maintain relationships through interaction. This is a placement of playful expression — texting, talking, humor, and shared ideas become the foundation of connection.</p>
+            <p>You are naturally engaging, socially adaptable, and often skilled in media, writing, or content creation. Attraction builds through repetition — small interactions rather than grand gestures.</p>
+            <p>The challenge here is inconsistency or seeking validation through constant interaction. The growth lies in communicating authentically rather than performing for response.</p>
+
+            <h3>Venus in the 4th House — Love as emotional safety and home</h3>
+            <p>Venus in the 4th house brings the need for emotional comfort and inner peace. Love is not about excitement here — it is about feeling safe, nurtured, and settled. You are deeply affected by your environment and need a peaceful home to function well.</p>
+            <p>You often express love through care, presence, and creating a soothing space. Family and emotional bonding are central themes.</p>
+            <p>At its highest, this gives emotional intelligence and nurturing ability. At its lowest, it creates dependency on comfort, avoidance of conflict, or difficulty stepping out of emotional safety zones.</p>
+
+            <h3>Venus in the 5th House — Love as expression, romance, and creativity</h3>
+            <p>This is one of the most expressive placements of Venus. You love to love — openly, creatively, and with enthusiasm. Romance, attention, admiration, and emotional engagement are important to you.</p>
+            <p>You are naturally charming and often attract people easily. Creativity is strong — whether in art, performance, or how you express yourself socially.</p>
+            <p>However, there can be a tendency to idealize love or depend on validation. Growth comes when you learn to create joy internally instead of relying on external appreciation.</p>
+
+            <h3>Venus in the 6th House — Love through service, effort, and correction</h3>
+            <p>Venus in the 6th house shifts love into the domain of effort and responsibility. You show affection through care, helping, fixing problems, and being present in daily routines.</p>
+            <p>Relationships here are rarely effortless — they require work, adjustment, and balance. You may attract partners who need support or situations where love becomes duty.</p>
+            <p>At its best, this creates reliability and deep commitment. At its lowest, it leads to over-giving, imbalance, or emotional exhaustion. The key lesson is maintaining boundaries while caring for others.</p>
+
+            <h3>Venus in the 7th House — Love as partnership and reflection</h3>
+            <p>Venus in the 7th house is one of the strongest placements for relationships. You are naturally partnership-oriented and often feel complete when in a balanced connection.</p>
+            <p>You attract people easily and tend to value harmony, fairness, and mutual respect. Relationships play a central role in your life path.</p>
+            <p>However, there can be dependence on partnership or difficulty functioning alone. Growth comes when you maintain individuality while being in connection.</p>
+
+            <h3>Venus in the 8th House — Love as intensity and transformation</h3>
+            <p>This is a deep and powerful placement. Love is not light here — it is intense, emotional, and transformative. You seek deep bonding, not surface-level attraction.</p>
+            <p>There is strong magnetism, but also themes of control, secrecy, or emotional extremes. Relationships often bring major inner change.</p>
+            <p>At its highest, this gives emotional depth and powerful connection. At its lowest, it can create possessiveness, obsession, or instability in relationships.</p>
+
+            <h3>Venus in the 9th House — Love as expansion and belief</h3>
+            <p>Venus in the 9th house connects love with growth, learning, and exploration. You are attracted to people who expand your thinking or come from different backgrounds.</p>
+            <p>Travel, philosophy, and shared beliefs play a role in relationships. Love feels meaningful when it contributes to personal growth.</p>
+            <p>At its best, this creates inspiring and evolving relationships. At its lowest, it may lead to restlessness or difficulty committing if growth feels restricted.</p>
+
+            <h3>Venus in the 10th House — Love through status, image, and achievement</h3>
+            <p>Here Venus expresses publicly. You attract attention through your image, career, or social presence. Relationships may connect with status, ambition, or visibility.</p>
+            <p>You value respect and recognition, and this influences your romantic choices. Love and career can become interconnected.</p>
+            <p>At its best, this gives public charm and success. At its lowest, it can create image-based relationships or emotional distance due to ambition.</p>
+
+            <h3>Venus in the 11th House — Love through networks and shared goals</h3>
+            <p>Venus in the 11th house connects love with friendships, networks, and social circles. Relationships often begin as friendships and evolve into something more.</p>
+            <p>You value companionship, shared goals, and social alignment in relationships. Gains and opportunities often come through connections.</p>
+            <p>At its best, this gives supportive networks and fulfilling partnerships. At its lowest, it can create superficial connections or dependency on social validation.</p>
+
+            <h3>Venus in the 12th House — Love as privacy, sacrifice, and inner emotion</h3>
+            <p>Venus in the 12th house moves love into the hidden realm. Emotions are deep but often private. You may love quietly, sacrifice for relationships, or experience connection internally more than externally.</p>
+            <p>This placement can bring spiritual or unconditional love, but also hidden relationships, confusion, or emotional isolation if not balanced.</p>
+            <p>At its highest, it gives compassion and deep emotional connection. At its lowest, it creates loss, secrecy, or difficulty expressing love openly.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <p>Venus in the chart shows how you love, what you value, and how you experience connection. Each house modifies this expression — from identity (1st) to subconscious (12th).</p>
+            <p>Strong Venus creates harmony, attraction, and fulfillment.<br>
+            Afflicted Venus creates imbalance, attachment, or emotional lessons.</p>
+            <blockquote>The real purpose of Venus is not just to attract — but to teach balance between desire and peace.</blockquote>
         `,
-        image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000&auto=format&fit=crop",
+        image: "assets/venus_houses.png",
         category: "Deep Dives"
     },
     {
