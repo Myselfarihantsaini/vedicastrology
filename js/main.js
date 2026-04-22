@@ -103,7 +103,7 @@ function initStars() {
             ctx.beginPath();
             ctx.moveTo(s.x, s.y);
             ctx.lineTo(s.x - Math.cos(s.angle) * s.len, s.y - Math.sin(s.angle) * s.len);
-            const grad = ctx.createLinearGradient(s.x, s.y, s.x - Math.cos(s.angle)*s.len, s.y - Math.sin(s.angle)*s.len);
+            const grad = ctx.createLinearGradient(s.x, s.y, s.x - Math.cos(s.angle) * s.len, s.y - Math.sin(s.angle) * s.len);
             grad.addColorStop(0, `rgba(212, 168, 67, ${s.alpha})`);
             grad.addColorStop(1, 'transparent');
             ctx.strokeStyle = grad;
@@ -159,7 +159,7 @@ function initMobileMenu() {
 // ---- Scroll Reveal Animation ----
 function initScrollReveal() {
     const elements = document.querySelectorAll('.post-card, .zodiac-card, .about-grid, .cta-content, .service-card');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -188,7 +188,7 @@ function renderPosts() {
         const postCard = document.createElement('div');
         postCard.className = 'post-card';
         postCard.style.transitionDelay = `${index * 0.1}s`;
-        
+
         postCard.innerHTML = `
             <div class="post-image" style="background-image: url('${post.image}')">
                 <span class="category-badge">${post.category}</span>
@@ -200,7 +200,7 @@ function renderPosts() {
                 <a href="post.html?id=${post.id}" class="read-more">Read Full Post →</a>
             </div>
         `;
-        
+
         postsGrid.appendChild(postCard);
     });
 }
@@ -227,6 +227,19 @@ function renderSinglePost() {
             <div class="post-body">
                 ${post.content}
             </div>
+
+            <!-- AdSense Ad inside the blog post to maximize earnings -->
+            <div style="margin: 40px 0; text-align: center;">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9194178610009666"
+                     data-ad-slot="auto"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
             <div class="post-actions" style="display: flex; gap: 15px; margin: 30px 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 0;">
                 <button class="post-action-btn like-btn" onclick="this.classList.toggle('liked'); this.innerHTML = this.classList.contains('liked') ? '♥ Liked' : '♡ Like'">♡ Like</button>
                 <button class="post-action-btn share-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');">🔗 Share</button>
@@ -235,13 +248,20 @@ function renderSinglePost() {
             <div class="post-comments-section" style="margin-top: 40px; padding: 30px; background: rgba(18, 26, 46, 0.5); border-radius: 12px; border: 1px solid var(--border-subtle);">
                 <h3 style="margin-bottom: 20px; font-family: var(--font-serif); color: var(--primary);">Discussion</h3>
                 
-                <script src="https://utteranc.es/client.js"
-                        repo="Myselfarihantsaini/Myselfarihantsaini.github.io"
-                        issue-term="pathname"
-                        theme="github-dark"
-                        crossorigin="anonymous"
-                        async>
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.href;  
+                        this.page.identifier = '${post.id}'; 
+                    };
+                    (function() { 
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://shambhava.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
                 </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
 
             <div class="post-footer" style="margin-top: 40px; text-align: center;">
@@ -264,22 +284,22 @@ function renderSinglePost() {
 function initChatFab() {
     const fab = document.getElementById('chat-fab');
     const fabBtn = document.getElementById('chat-fab-btn');
-    
+
     if (!fab || !fabBtn) return;
-    
+
     // Toggle menu on button click
     fabBtn.addEventListener('click', (e) => {
         e.stopPropagation(); // Prevent clicking outside from firing immediately
         fab.classList.toggle('active');
     });
-    
+
     // Close menu when clicking anywhere else
     document.addEventListener('click', (e) => {
         if (fab.classList.contains('active') && !fab.contains(e.target)) {
             fab.classList.remove('active');
         }
     });
-    
+
     // Optional: Auto-open the chat menu once after a delay to grab attention
     setTimeout(() => {
         if (!fab.classList.contains('active')) {
@@ -300,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPosts();
     renderSinglePost();
     initChatFab();
-    
+
     // Delay scroll reveal so cards render first
     setTimeout(initScrollReveal, 100);
 });
