@@ -156,46 +156,5 @@ const postsData = [
         `,
         image: "assets/cosmic_banner.png",
         category: "Astrology Deep Dive"
-    },
-    {
-        id: "transit-jupiter-taurus",
-        title: "Jupiter Transit in Taurus: What it Means for Your Zodiac",
-        date: "April 22, 2026",
-        excerpt: "The grand benefic Jupiter enters grounded Taurus today. Discover how this powerful shift will impact your wealth, family, and spiritual growth.",
-        content: `
-            <h3>The Cosmic Shift</h3>
-            <p>Today marks a significant celestial event as Jupiter (Guru), the planet of wisdom, expansion, and abundance, transitions into the earthy sign of Taurus (Vrishabha). This transit brings a grounding energy to our spiritual and material pursuits.</p>
-            
-            <h3>Impact on Wealth and Values</h3>
-            <p>Taurus is ruled by Venus, and when Jupiter resides here, there is a harmonious blend of expansion and material comfort. It is an excellent time for long-term investments, building solid foundations, and reassessing your core values.</p>
-
-            <h3>How to make the most of this transit</h3>
-            <ul>
-                <li><strong>Practice Gratitude:</strong> Focus on what you already have.</li>
-                <li><strong>Invest Wisely:</strong> Avoid impulsive spending; think long-term.</li>
-                <li><strong>Spiritual Grounding:</strong> Connect with nature to align with Taurean energy.</li>
-            </ul>
-            <p>Stay tuned for individual sign predictions later this week!</p>
-        `,
-        image: "assets/zodiac_wheel.png",
-        category: "Planetary Transits"
-    },
-    {
-        id: "daily-horoscope-april-21",
-        title: "Daily Horoscope & Panchang \u2014 April 21, 2026",
-        date: "April 21, 2026",
-        excerpt: "Today\u2019s lunar position in Ashwini Nakshatra brings swift energy and healing. Find out your lucky color and daily prediction.",
-        content: `
-            <h3>Today\u2019s Panchang</h3>
-            <p>The moon is currently transiting through Aries, in the vibrant Nakshatra of Ashwini. This brings a surge of vitality, perfect for starting new projects or focusing on health and healing.</p>
-            
-            <h3>Key Insights for the Day</h3>
-            <p>With Mars aspecting the moon, emotions might run high. Channel this fiery energy into productive physical activities or creative endeavors.</p>
-            
-            <h3>Remedy of the Day</h3>
-            <p>Offer water to the Sun god (Surya Dev) in the morning to harness positive vitality and clarity for the day ahead.</p>
-        `,
-        image: "assets/card_background.png",
-        category: "Daily Horoscope"
     }
 ];
