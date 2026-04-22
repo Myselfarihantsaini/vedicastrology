@@ -533,6 +533,31 @@ h1, h2, h3, h4, h5 { font-family: var(--font-serif); color: var(--text-light); f
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.service-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-btn {
+    color: var(--primary-light);
+}
+
+.service-card:hover .service-btn svg {
+    transform: translateX(4px);
 }
 
 /* ==================== ABOUT ==================== */
