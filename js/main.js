@@ -2,13 +2,14 @@
 // AstroSeeker — Main JavaScript
 // =============================================
 
-// ---- Animated Stars Background ----
+// ---- Animated Stars + Sacred Symbols Background ----
 function initStars() {
     const canvas = document.getElementById('stars-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let stars = [];
-    const STAR_COUNT = 200;
+    let stars = [], symbols = [], shootingStars = [];
+    const STAR_COUNT = 220;
+    const SACRED = ['ॐ', '᳐', '✦', 'ॐ', '☸'];
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -21,33 +22,107 @@ function initStars() {
             stars.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                radius: Math.random() * 1.5 + 0.3,
+                radius: Math.random() * 1.8 + 0.2,
                 alpha: Math.random(),
-                speed: Math.random() * 0.005 + 0.002,
+                speed: Math.random() * 0.006 + 0.001,
                 direction: Math.random() > 0.5 ? 1 : -1
             });
         }
     }
 
-    function drawStars() {
+    function createSymbols() {
+        symbols = [];
+        const count = Math.floor(canvas.width / 280);
+        for (let i = 0; i < count; i++) {
+            symbols.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                char: SACRED[Math.floor(Math.random() * SACRED.length)],
+                size: Math.random() * 28 + 18,
+                alpha: 0,
+                maxAlpha: Math.random() * 0.06 + 0.02,
+                speedX: (Math.random() - 0.5) * 0.15,
+                speedY: -Math.random() * 0.2 - 0.05,
+                fadeSpeed: Math.random() * 0.002 + 0.001,
+                fadingIn: true
+            });
+        }
+    }
+
+    function spawnShootingStar() {
+        shootingStars.push({
+            x: Math.random() * canvas.width * 0.7,
+            y: Math.random() * canvas.height * 0.4,
+            len: Math.random() * 80 + 40,
+            speed: Math.random() * 4 + 3,
+            alpha: 1,
+            angle: Math.PI / 5
+        });
+    }
+
+    setInterval(() => { if (Math.random() < 0.4) spawnShootingStar(); }, 4000);
+
+    function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Stars
         stars.forEach(star => {
             star.alpha += star.speed * star.direction;
             if (star.alpha >= 1) { star.alpha = 1; star.direction = -1; }
-            if (star.alpha <= 0.1) { star.alpha = 0.1; star.direction = 1; }
-
+            if (star.alpha <= 0.05) { star.alpha = 0.05; star.direction = 1; }
             ctx.beginPath();
             ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(212, 168, 67, ${star.alpha * 0.6})`;
+            ctx.fillStyle = `rgba(212, 168, 67, ${star.alpha * 0.55})`;
             ctx.fill();
         });
-        requestAnimationFrame(drawStars);
+
+        // Sacred floating symbols
+        symbols.forEach(sym => {
+            if (sym.fadingIn) {
+                sym.alpha += sym.fadeSpeed;
+                if (sym.alpha >= sym.maxAlpha) sym.fadingIn = false;
+            } else {
+                sym.alpha -= sym.fadeSpeed * 0.5;
+                if (sym.alpha <= 0) {
+                    sym.x = Math.random() * canvas.width;
+                    sym.y = canvas.height + 20;
+                    sym.alpha = 0;
+                    sym.fadingIn = true;
+                    sym.char = SACRED[Math.floor(Math.random() * SACRED.length)];
+                }
+            }
+            sym.x += sym.speedX;
+            sym.y += sym.speedY;
+            ctx.font = `${sym.size}px serif`;
+            ctx.fillStyle = `rgba(198, 161, 91, ${sym.alpha})`;
+            ctx.fillText(sym.char, sym.x, sym.y);
+        });
+
+        // Shooting stars
+        shootingStars.forEach((s, i) => {
+            ctx.beginPath();
+            ctx.moveTo(s.x, s.y);
+            ctx.lineTo(s.x - Math.cos(s.angle) * s.len, s.y - Math.sin(s.angle) * s.len);
+            const grad = ctx.createLinearGradient(s.x, s.y, s.x - Math.cos(s.angle)*s.len, s.y - Math.sin(s.angle)*s.len);
+            grad.addColorStop(0, `rgba(212, 168, 67, ${s.alpha})`);
+            grad.addColorStop(1, 'transparent');
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            s.x += Math.cos(s.angle) * s.speed;
+            s.y += Math.sin(s.angle) * s.speed;
+            s.alpha -= 0.02;
+            if (s.alpha <= 0) shootingStars.splice(i, 1);
+        });
+
+        requestAnimationFrame(draw);
     }
 
     resize();
     createStars();
-    drawStars();
-    window.addEventListener('resize', () => { resize(); createStars(); });
+    createSymbols();
+    draw();
+    window.addEventListener('resize', () => { resize(); createStars(); createSymbols(); });
 }
 
 // ---- Navbar Scroll Effect ----
@@ -202,7 +277,7 @@ function initChatFab() {
 
 // ---- Initialize Everything ----
 document.addEventListener('DOMContentLoaded', () => {
-    // initStars(); // Disabled for a calmer, more sacred Vastu-style experience
+    initStars();
     initNavbar();
     initMobileMenu();
     renderPosts();
