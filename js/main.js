@@ -248,20 +248,13 @@ function renderSinglePost() {
             <div class="post-comments-section" style="margin-top: 40px; padding: 30px; background: rgba(18, 26, 46, 0.5); border-radius: 12px; border: 1px solid var(--border-subtle);">
                 <h3 style="margin-bottom: 20px; font-family: var(--font-serif); color: var(--primary);">Discussion</h3>
                 
-                <div id="disqus_thread"></div>
-                <script>
-                    var disqus_config = function () {
-                        this.page.url = window.location.href;  
-                        this.page.identifier = '${post.id}'; 
-                    };
-                    (function() { 
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://shambhava.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
+                <script src="https://utteranc.es/client.js"
+                        repo="Myselfarihantsaini/Myselfarihantsaini.github.io"
+                        issue-term="pathname"
+                        theme="github-dark"
+                        crossorigin="anonymous"
+                        async>
                 </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
 
             <div class="post-footer" style="margin-top: 40px; text-align: center;">
