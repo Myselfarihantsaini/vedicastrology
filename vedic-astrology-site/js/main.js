@@ -168,6 +168,38 @@ function renderSinglePost() {
     }
 }
 
+// ---- Floating Chat Button Logic ----
+function initChatFab() {
+    const fab = document.getElementById('chat-fab');
+    const fabBtn = document.getElementById('chat-fab-btn');
+    
+    if (!fab || !fabBtn) return;
+    
+    // Toggle menu on button click
+    fabBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent clicking outside from firing immediately
+        fab.classList.toggle('active');
+    });
+    
+    // Close menu when clicking anywhere else
+    document.addEventListener('click', (e) => {
+        if (fab.classList.contains('active') && !fab.contains(e.target)) {
+            fab.classList.remove('active');
+        }
+    });
+    
+    // Optional: Auto-open the chat menu once after a delay to grab attention
+    setTimeout(() => {
+        if (!fab.classList.contains('active')) {
+            fab.classList.add('active');
+            // Auto close it after 5 seconds
+            setTimeout(() => {
+                fab.classList.remove('active');
+            }, 5000);
+        }
+    }, 15000); // Trigger after 15 seconds of page load
+}
+
 // ---- Initialize Everything ----
 document.addEventListener('DOMContentLoaded', () => {
     initStars();
@@ -175,6 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     renderPosts();
     renderSinglePost();
+    initChatFab();
     
     // Delay scroll reveal so cards render first
     setTimeout(initScrollReveal, 100);
