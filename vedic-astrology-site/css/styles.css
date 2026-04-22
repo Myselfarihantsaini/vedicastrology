@@ -708,6 +708,9 @@ h1, h2, h3, h4, h5 { font-family: var(--font-serif); color: var(--text-light); f
 .chat-fab-item.th { border-color: rgba(255, 255, 255, 0.15); }
 .chat-fab-item.th:hover { border-color: #fff; color: #fff; }
 
+.chat-fab-item.wa { border-color: rgba(37, 211, 102, 0.3); }
+.chat-fab-item.wa:hover { border-color: #25D366; color: #25D366; }
+
 .chat-fab-label {
     position: absolute;
     bottom: 75px;
