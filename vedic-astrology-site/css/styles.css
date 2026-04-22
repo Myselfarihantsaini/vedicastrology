@@ -447,76 +447,109 @@ h1, h2, h3, h4, h5 { font-family: var(--font-serif); color: var(--text-light); f
     position: relative;
 }
 
+.services-section {
+    background: var(--bg-deep);
+    position: relative;
+    padding: 96px 0;
+}
+
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../assets/hero_mandala.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.services-section .section-header {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 40px;
+    margin-bottom: 48px;
+}
+
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
 }
 
 .service-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius);
-    padding: 30px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(198, 161, 91, 0.22);
+    border-radius: 20px;
+    padding: 28px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
     transition: var(--transition);
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 3px;
-    background: var(--gold-gradient);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    background: var(--bg-card-hover);
-    box-shadow: var(--shadow-glow);
-    border-color: var(--border-glow);
+    transform: translateY(-4px);
+    border-color: rgba(198, 161, 91, 0.5);
+    box-shadow: 0 10px 40px rgba(198, 161, 91, 0.08);
 }
 
-.service-card:hover::before { transform: scaleX(1); }
-
-.service-icon {
-    font-size: 2rem;
-    margin-bottom: 16px;
+.service-label {
     display: inline-block;
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.service-title {
-    font-size: 1.25rem;
-    color: var(--text-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 12px;
 }
 
-.service-desc {
+.service-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.service-details {
+    flex-grow: 1;
+    margin-bottom: 24px;
+}
+
+.service-details p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+}
+
+.service-details strong {
+    color: var(--text-main);
+    font-weight: 500;
 }
 
 .service-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: var(--transition);
+    margin-top: auto;
 }
 
 .service-btn svg {
@@ -529,6 +562,28 @@ h1, h2, h3, h4, h5 { font-family: var(--font-serif); color: var(--text-light); f
 
 .service-card:hover .service-btn svg {
     transform: translateX(4px);
+}
+
+.services-footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.trust-text {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.trust-subtext {
+    margin-top: 24px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 /* ==================== ABOUT ==================== */
