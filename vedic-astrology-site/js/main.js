@@ -83,7 +83,7 @@ function initMobileMenu() {
 
 // ---- Scroll Reveal Animation ----
 function initScrollReveal() {
-    const elements = document.querySelectorAll('.post-card, .zodiac-card, .about-grid, .cta-content');
+    const elements = document.querySelectorAll('.post-card, .zodiac-card, .about-grid, .cta-content, .service-card');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
