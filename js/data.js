@@ -9,6 +9,31 @@
 
 const postsData = [
     {
+        id: "saturn-return-meaning",
+        title: "The Saturn Return — Entering Spiritual Adulthood",
+        date: "April 23, 2026",
+        excerpt: "Between ages 28 and 30, Saturn returns to the exact sign it occupied when you were born. It is astrology's most famous wake-up call, but it is not meant to break you—it is meant to build you.",
+        content: `
+            <p>Between ages 28 and 30 (and again around 58-60), Saturn returns to the exact sign it occupied when you were born. This period is astrology's most famous wake-up call. But despite its fearsome reputation, the Saturn Return is not meant to break you—it is meant to build you.</p>
+            <p>Saturn is the planet of reality, time, karma, and structural integrity. For the first 28 years of your life, you operate under the illusion of infinite time. You make choices based on societal conditioning, parental expectations, and youthful experimentation. When Saturn returns, it audits your life to see if your foundation is strong enough to hold the weight of true adulthood.</p>
+            
+            <h3>What Happens During a Saturn Return?</h3>
+            <p>The Saturn Return acts as a cosmic checkpoint. Anything in your life that is out of alignment with your authentic karmic path will feel increasingly heavy, restrictive, or unsustainable.</p>
+            <ul>
+                <li><strong>Career:</strong> If you are in a job solely for money or prestige, Saturn will make the lack of purpose painfully obvious. Many change career paths entirely.</li>
+                <li><strong>Relationships:</strong> Weak relationships crumble under Saturn's pressure. However, strong relationships built on mutual respect and shared reality often solidify into marriage.</li>
+                <li><strong>Identity:</strong> The masks you wore to please others stop working. You are forced to define your own boundaries.</li>
+            </ul>
+
+            <h3>How to Navigate It</h3>
+            <p>The key to surviving and thriving during your Saturn Return is <strong>responsibility</strong>. Saturn rewards hard work, accountability, and maturity. If you resist reality, Saturn will force it upon you. If you accept the lessons, Saturn becomes the greatest builder of your life.</p>
+            <blockquote>"Saturn delays, but it does not deny."</blockquote>
+            <p>Don't rush the process. Take your time, get organized, strip away the unessential, and commit to the path that feels true, even if it is the harder road.</p>
+        `,
+        image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000&auto=format&fit=crop",
+        category: "Deep Dives"
+    },
+    {
         id: "venus-in-1st-house",
         title: "Venus in the 1st House — when the body itself becomes Venus",
         date: "April 22, 2026",
