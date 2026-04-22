@@ -1401,3 +1401,7 @@ textarea.form-control {
 .faq-answer p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.7; }
 .faq-answer strong { color: var(--text-main); }
 
+/* ==================== POST ACTIONS ==================== */
+.post-action-btn { background: transparent; border: 1px solid var(--border-subtle); color: var(--text-muted); padding: 8px 16px; border-radius: 20px; font-family: var(--font-sans); cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+.post-action-btn:hover { border-color: var(--primary); color: var(--primary); background: rgba(212, 168, 67, 0.05); }
+.post-action-btn.liked { border-color: var(--primary); color: var(--primary); background: rgba(212, 168, 67, 0.1); }

@@ -227,8 +227,26 @@ function renderSinglePost() {
             <div class="post-body">
                 ${post.content}
             </div>
-            <div class="post-footer">
-                <a href="index.html" class="btn-threads">← Back to Home</a>
+            <div class="post-actions" style="display: flex; gap: 15px; margin: 30px 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 0;">
+                <button class="post-action-btn like-btn" onclick="this.classList.toggle('liked'); this.innerHTML = this.classList.contains('liked') ? '♥ Liked' : '♡ Like'">♡ Like</button>
+                <button class="post-action-btn share-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');">🔗 Share</button>
+            </div>
+            
+            <div class="post-comments-section" style="margin-top: 40px; padding: 30px; background: rgba(18, 26, 46, 0.5); border-radius: 12px; border: 1px solid var(--border-subtle);">
+                <h3 style="margin-bottom: 20px; font-family: var(--font-serif); color: var(--primary);">Leave a Comment</h3>
+                <form class="comment-form" onsubmit="event.preventDefault(); const name = this.querySelector('input').value; const comment = this.querySelector('textarea').value; if(name && comment) { const commentsList = document.getElementById('comments-list'); const newComment = document.createElement('div'); newComment.style.cssText = 'padding: 15px 0; border-bottom: 1px solid rgba(198, 161, 91, 0.1);'; newComment.innerHTML = '<strong>' + name + '</strong><p style=\"color: var(--text-muted); margin-top: 5px;\">' + comment + '</p>'; commentsList.prepend(newComment); this.reset(); }">
+                    <input type="text" placeholder="Your Name" required style="width: 100%; padding: 12px; margin-bottom: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); color: var(--text-main); border-radius: 8px;">
+                    <textarea placeholder="Share your thoughts..." required rows="4" style="width: 100%; padding: 12px; margin-bottom: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); color: var(--text-main); border-radius: 8px;"></textarea>
+                    <button type="submit" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem; cursor: pointer;">Post Comment</button>
+                </form>
+                
+                <div id="comments-list" style="margin-top: 30px;">
+                    <!-- New comments will appear here -->
+                </div>
+            </div>
+
+            <div class="post-footer" style="margin-top: 40px; text-align: center;">
+                <a href="index.html" class="btn-threads" style="display: inline-block;">← Back to Home</a>
             </div>
         `;
     } else {
