@@ -489,7 +489,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-serif); color: var(--text-light); f
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(18, 26, 46, 0.95);
     border: 1px solid rgba(198, 161, 91, 0.22);
     border-radius: 20px;
     padding: 28px;
@@ -497,12 +497,18 @@ h1, h2, h3, h4, h5 { font-family: var(--font-serif); color: var(--text-light); f
     display: flex;
     flex-direction: column;
     transition: var(--transition);
+    backdrop-filter: blur(10px);
 }
 
 .service-card:hover {
+    background: rgba(25, 36, 60, 0.98);
     transform: translateY(-4px);
     border-color: rgba(198, 161, 91, 0.5);
-    box-shadow: 0 10px 40px rgba(198, 161, 91, 0.08);
+    box-shadow: 0 10px 40px rgba(198, 161, 91, 0.12);
+}
+
+.service-card:active {
+    background: rgba(25, 36, 60, 0.98);
 }
 
 .service-label {
