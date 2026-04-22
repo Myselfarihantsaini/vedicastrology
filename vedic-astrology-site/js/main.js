@@ -202,7 +202,7 @@ function initChatFab() {
 
 // ---- Initialize Everything ----
 document.addEventListener('DOMContentLoaded', () => {
-    initStars();
+    // initStars(); // Disabled for a calmer, more sacred Vastu-style experience
     initNavbar();
     initMobileMenu();
     renderPosts();
