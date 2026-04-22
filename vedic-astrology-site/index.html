@@ -3,77 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Insights - Daily Vedic Astrology</title>
-    <meta name="description" content="Daily Vedic Astrology insights, horoscopes, and spiritual guidance.">
+    <title>AstroSeeker — Daily Vedic Astrology Insights & Horoscopes</title>
+    <meta name="description" content="Explore deep Vedic Astrology insights, daily horoscopes, planetary transits, and spiritual guidance. Free daily readings by Arihant Saini.">
+    <meta name="keywords" content="Vedic Astrology, Jyotish, Horoscope, Daily Horoscope, Planetary Transit, Zodiac, Nakshatra, Kundali">
+    <meta property="og:title" content="AstroSeeker — Daily Vedic Astrology">
+    <meta property="og:description" content="Deep Vedic Astrology insights, daily horoscopes, and spiritual guidance.">
+    <meta property="og:image" content="assets/cosmic_banner.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Google AdSense Auto Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9194178610009666" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar">
+    <!-- Animated Stars Background -->
+    <canvas id="stars-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Cosmic<span>Insights</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#daily-insights">Daily Insights</a></li>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✦</span>
+                Astro<span class="logo-accent">Seeker</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#daily-insights">Insights</a></li>
+                <li><a href="#zodiac-signs">Zodiac</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="https://www.threads.com/@myself_arihant" target="_blank" class="nav-threads">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.26 1.33-3.022.88-.727 2.1-1.14 3.538-1.209 1.01-.05 1.945.025 2.791.18-.122-.79-.39-1.404-.82-1.83-.596-.59-1.497-.89-2.68-.892h-.031c-.88.003-1.61.209-2.17.614l-1.157-1.652c.852-.596 1.94-.915 3.243-.938h.053c1.723.013 3.065.542 3.988 1.576.795.89 1.273 2.079 1.426 3.54.465.218.897.476 1.293.775 1.06.8 1.832 1.855 2.244 3.07.6 1.77.52 4.46-1.678 6.612-1.88 1.838-4.142 2.634-7.322 2.66zM14.56 14.24c-1.015-.048-3.24.054-3.39 1.296-.072.589.263 1.347 1.808 1.347.08 0 .162-.003.246-.008 1.083-.059 1.908-.454 2.453-1.175.35-.464.583-1.044.72-1.73a9.4 9.4 0 00-1.837.27z"/></svg>
+                    Threads
+                </a></li>
             </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-bg"></div>
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-glow"></div>
         <div class="container hero-content">
-            <h1>Unlock the Secrets of the Stars</h1>
-            <p>Your daily guide to Vedic Astrology, planetary transits, and spiritual awakening.</p>
-            <a href="#daily-insights" class="btn-primary">Read Today's Insight</a>
+            <div class="hero-badge">✦ Vedic Astrology • Jyotish Shastra ✦</div>
+            <h1>Decode Your <span class="text-gradient">Cosmic Blueprint</span></h1>
+            <p class="hero-subtitle">Deep Vedic Astrology insights that go beyond surface-level predictions. Understand your planets, your karma, your path.</p>
+            <div class="hero-actions">
+                <a href="#daily-insights" class="btn-primary">
+                    <span>Read Today's Insight</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                </a>
+                <a href="https://www.threads.com/@myself_arihant" target="_blank" class="btn-threads">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.26 1.33-3.022.88-.727 2.1-1.14 3.538-1.209 1.01-.05 1.945.025 2.791.18-.122-.79-.39-1.404-.82-1.83-.596-.59-1.497-.89-2.68-.892h-.031c-.88.003-1.61.209-2.17.614l-1.157-1.652c.852-.596 1.94-.915 3.243-.938h.053c1.723.013 3.065.542 3.988 1.576.795.89 1.273 2.079 1.426 3.54.465.218.897.476 1.293.775 1.06.8 1.832 1.855 2.244 3.07.6 1.77.52 4.46-1.678 6.612-1.88 1.838-4.142 2.634-7.322 2.66zM14.56 14.24c-1.015-.048-3.24.054-3.39 1.296-.072.589.263 1.347 1.808 1.347.08 0 .162-.003.246-.008 1.083-.059 1.908-.454 2.453-1.175.35-.464.583-1.044.72-1.73a9.4 9.4 0 00-1.837.27z"/></svg>
+                    Follow on Threads
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">12</span><span class="stat-label">Zodiac Signs</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><span class="stat-num">27</span><span class="stat-label">Nakshatras</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><span class="stat-num">9</span><span class="stat-label">Grahas</span></div>
+            </div>
         </div>
     </header>
 
-    <!-- AdSense Placeholder -->
-    <section class="ad-container container">
-        <div class="ad-placeholder">
-            <span>Advertisement (Google AdSense Space)</span>
-            <p>Earn passive revenue by placing your ad code here.</p>
+    <!-- Ad Space 1 -->
+    <section class="ad-section container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9194178610009666" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </section>
+
+    <!-- Zodiac Signs Section -->
+    <section id="zodiac-signs" class="section zodiac-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Explore the Rashis</span>
+                <h2>The 12 <span class="text-gradient">Zodiac Signs</span></h2>
+                <p>Discover the unique energy each Rashi brings to your chart.</p>
+            </div>
+            <div class="zodiac-grid">
+                <div class="zodiac-card" data-sign="aries"><span class="zodiac-symbol">♈</span><span class="zodiac-name">Mesh<br>(Aries)</span></div>
+                <div class="zodiac-card" data-sign="taurus"><span class="zodiac-symbol">♉</span><span class="zodiac-name">Vrishabh<br>(Taurus)</span></div>
+                <div class="zodiac-card" data-sign="gemini"><span class="zodiac-symbol">♊</span><span class="zodiac-name">Mithun<br>(Gemini)</span></div>
+                <div class="zodiac-card" data-sign="cancer"><span class="zodiac-symbol">♋</span><span class="zodiac-name">Kark<br>(Cancer)</span></div>
+                <div class="zodiac-card" data-sign="leo"><span class="zodiac-symbol">♌</span><span class="zodiac-name">Simha<br>(Leo)</span></div>
+                <div class="zodiac-card" data-sign="virgo"><span class="zodiac-symbol">♍</span><span class="zodiac-name">Kanya<br>(Virgo)</span></div>
+                <div class="zodiac-card" data-sign="libra"><span class="zodiac-symbol">♎</span><span class="zodiac-name">Tula<br>(Libra)</span></div>
+                <div class="zodiac-card" data-sign="scorpio"><span class="zodiac-symbol">♏</span><span class="zodiac-name">Vrishchik<br>(Scorpio)</span></div>
+                <div class="zodiac-card" data-sign="sagittarius"><span class="zodiac-symbol">♐</span><span class="zodiac-name">Dhanu<br>(Sagittarius)</span></div>
+                <div class="zodiac-card" data-sign="capricorn"><span class="zodiac-symbol">♑</span><span class="zodiac-name">Makar<br>(Capricorn)</span></div>
+                <div class="zodiac-card" data-sign="aquarius"><span class="zodiac-symbol">♒</span><span class="zodiac-name">Kumbh<br>(Aquarius)</span></div>
+                <div class="zodiac-card" data-sign="pisces"><span class="zodiac-symbol">♓</span><span class="zodiac-name">Meen<br>(Pisces)</span></div>
+            </div>
         </div>
     </section>
 
-    <main id="daily-insights" class="container section">
-        <div class="section-header">
-            <h2>Daily Cosmic Insights</h2>
-            <p>Explore the latest astrological readings and transits.</p>
-        </div>
-        <div id="posts-grid" class="posts-grid">
-            <!-- Posts will be injected here via JavaScript -->
+    <!-- Daily Insights Section -->
+    <main id="daily-insights" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fresh Content Daily</span>
+                <h2>Cosmic <span class="text-gradient">Insights</span></h2>
+                <p>In-depth astrological readings, transit analyses, and planetary wisdom.</p>
+            </div>
+            <div id="posts-grid" class="posts-grid">
+                <!-- Posts injected here via JavaScript -->
+            </div>
         </div>
     </main>
 
-    <!-- Affiliate / Ad Space -->
-    <section class="ad-container container">
-        <div class="ad-placeholder affiliate">
-            <span>Affiliate Product Placeholder</span>
-            <p>Link to Astrology Books, Gemstones, or Courses to earn commissions.</p>
+    <!-- Ad Space 2 -->
+    <section class="ad-section container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9194178610009666" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </section>
+
+    <!-- Consultation CTA -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container cta-content">
+            <h2>Seek Personalized <span class="text-gradient">Cosmic Guidance</span></h2>
+            <p>Get a detailed Vedic chart reading tailored to your birth details. Understand your Dashas, transits, and karmic patterns.</p>
+            <a href="https://www.threads.com/@myself_arihant" target="_blank" class="btn-primary btn-large">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.26 1.33-3.022.88-.727 2.1-1.14 3.538-1.209 1.01-.05 1.945.025 2.791.18-.122-.79-.39-1.404-.82-1.83-.596-.59-1.497-.89-2.68-.892h-.031c-.88.003-1.61.209-2.17.614l-1.157-1.652c.852-.596 1.94-.915 3.243-.938h.053c1.723.013 3.065.542 3.988 1.576.795.89 1.273 2.079 1.426 3.54.465.218.897.476 1.293.775 1.06.8 1.832 1.855 2.244 3.07.6 1.77.52 4.46-1.678 6.612-1.88 1.838-4.142 2.634-7.322 2.66zM14.56 14.24c-1.015-.048-3.24.054-3.39 1.296-.072.589.263 1.347 1.808 1.347.08 0 .162-.003.246-.008 1.083-.059 1.908-.454 2.453-1.175.35-.464.583-1.044.72-1.73a9.4 9.4 0 00-1.837.27z"/></svg>
+                <span>Message on Threads</span>
+            </a>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="assets/zodiac_wheel.png" alt="Vedic Zodiac Wheel">
+                </div>
+                <div class="about-text">
+                    <span class="section-tag">About AstroSeeker</span>
+                    <h2>Ancient Wisdom, <span class="text-gradient">Modern Insight</span></h2>
+                    <p>AstroSeeker is a dedicated platform for authentic Vedic Astrology (Jyotish Shastra) content. We go beyond generic horoscopes to deliver deep, research-backed interpretations of planetary placements, transits, and dashas.</p>
+                    <p>Every article is written with the intent to educate, empower, and illuminate your spiritual path through the timeless lens of the Vedic tradition.</p>
+                    <div class="about-social">
+                        <span>Follow the journey:</span>
+                        <a href="https://www.threads.com/@myself_arihant" target="_blank" class="social-link threads-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.26 1.33-3.022.88-.727 2.1-1.14 3.538-1.209 1.01-.05 1.945.025 2.791.18-.122-.79-.39-1.404-.82-1.83-.596-.59-1.497-.89-2.68-.892h-.031c-.88.003-1.61.209-2.17.614l-1.157-1.652c.852-.596 1.94-.915 3.243-.938h.053c1.723.013 3.065.542 3.988 1.576.795.89 1.273 2.079 1.426 3.54.465.218.897.476 1.293.775 1.06.8 1.832 1.855 2.244 3.07.6 1.77.52 4.46-1.678 6.612-1.88 1.838-4.142 2.634-7.322 2.66zM14.56 14.24c-1.015-.048-3.24.054-3.39 1.296-.072.589.263 1.347 1.808 1.347.08 0 .162-.003.246-.008 1.083-.059 1.908-.454 2.453-1.175.35-.464.583-1.044.72-1.73a9.4 9.4 0 00-1.837.27z"/></svg>
+                            @myself_arihant
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Space 3 -->
+    <section class="ad-section container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9194178610009666" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Cosmic Insights</h3>
-                    <p>Guiding you through life's journey with ancient Vedic wisdom.</p>
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-icon">✦</span> Astro<span class="logo-accent">Seeker</span>
+                    </a>
+                    <p>Guiding you through life's journey with ancient Vedic wisdom. Daily insights on planetary transits, nakshatras, and karmic patterns.</p>
+                    <a href="https://www.threads.com/@myself_arihant" target="_blank" class="social-link threads-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.26 1.33-3.022.88-.727 2.1-1.14 3.538-1.209 1.01-.05 1.945.025 2.791.18-.122-.79-.39-1.404-.82-1.83-.596-.59-1.497-.89-2.68-.892h-.031c-.88.003-1.61.209-2.17.614l-1.157-1.652c.852-.596 1.94-.915 3.243-.938h.053c1.723.013 3.065.542 3.988 1.576.795.89 1.273 2.079 1.426 3.54.465.218.897.476 1.293.775 1.06.8 1.832 1.855 2.244 3.07.6 1.77.52 4.46-1.678 6.612-1.88 1.838-4.142 2.634-7.322 2.66zM14.56 14.24c-1.015-.048-3.24.054-3.39 1.296-.072.589.263 1.347 1.808 1.347.08 0 .162-.003.246-.008 1.083-.059 1.908-.454 2.453-1.175.35-.464.583-1.044.72-1.73a9.4 9.4 0 00-1.837.27z"/></svg>
+                        Follow on Threads
+                    </a>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#daily-insights">Daily Insights</a></li>
+                        <li><a href="#zodiac-signs">Zodiac Signs</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#daily-insights">Planetary Transits</a></li>
+                        <li><a href="#daily-insights">Daily Horoscope</a></li>
+                        <li><a href="#daily-insights">Deep Dives</a></li>
+                        <li><a href="#daily-insights">Remedies</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Cosmic Insights. All rights reserved.</p>
+                <p>&copy; 2026 AstroSeeker by Arihant Saini. All rights reserved.</p>
+                <p class="footer-disclaimer">Vedic Astrology is a spiritual science for guidance purposes only.</p>
             </div>
         </div>
     </footer>
