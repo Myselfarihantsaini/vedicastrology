@@ -143,7 +143,7 @@ const postsData = [
             <h3>Final Conclusion</h3>
             <p>Venus governs: hormones, kidneys, reproductive system, sugar metabolism, recovery and balance. When Venus is balanced, the body maintains harmony. When Venus is disturbed, imbalance builds slowly and manifests physically over time. Health improvement through Venus is not about restriction alone — it is about balanced pleasure, emotional stability, and disciplined lifestyle.</p>
         `,
-        image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1200",
+        image: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&q=80&w=1200",
         category: "Planetary Health"
     },
     {
