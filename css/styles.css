@@ -1237,6 +1237,11 @@ h5 {
         gap: 40px;
     }
 
+    .service-detail-section .about-text,
+    .service-detail-section .about-image {
+        order: unset !important;
+    }
+
     .footer-content {
         grid-template-columns: 1fr 1fr;
     }
