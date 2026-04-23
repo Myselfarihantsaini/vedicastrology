@@ -625,6 +625,35 @@
                         <p id="discovery-summary" style="color: var(--text-muted); font-size: 1rem; line-height: 1.8; max-width: 700px; margin: 0 auto;"></p>
                     </div>
 
+                    <!-- KUNDALI CHART DISPLAY -->
+                    <div class="kundali-chart" id="kundali-container">
+                        <svg class="kundali-svg" viewBox="0 0 100 100">
+                            <!-- External Box -->
+                            <rect x="0" y="0" width="100" height="100" />
+                            <!-- Diamonds -->
+                            <line x1="0" y1="0" x2="100" y2="100" />
+                            <line x1="100" y1="0" x2="0" y2="100" />
+                            <line x1="50" y1="0" x2="100" y2="50" />
+                            <line x1="100" y1="50" x2="50" y2="100" />
+                            <line x1="50" y1="100" x2="0" y2="50" />
+                            <line x1="0" y1="50" x2="50" y2="0" />
+                        </svg>
+                        
+                        <!-- House Planets (Dynamic) -->
+                        <div id="house-1" class="house-data" style="top: 25%; left: 50%;"></div>
+                        <div id="house-2" class="house-data" style="top: 15%; left: 25%;"></div>
+                        <div id="house-3" class="house-data" style="top: 25%; left: 15%;"></div>
+                        <div id="house-4" class="house-data" style="top: 50%; left: 25%;"></div>
+                        <div id="house-5" class="house-data" style="top: 75%; left: 15%;"></div>
+                        <div id="house-6" class="house-data" style="top: 85%; left: 25%;"></div>
+                        <div id="house-7" class="house-data" style="top: 75%; left: 50%;"></div>
+                        <div id="house-8" class="house-data" style="top: 85%; left: 75%;"></div>
+                        <div id="house-9" class="house-data" style="top: 75%; left: 85%;"></div>
+                        <div id="house-10" class="house-data" style="top: 50%; left: 75%;"></div>
+                        <div id="house-11" class="house-data" style="top: 25%; left: 85%;"></div>
+                        <div id="house-12" class="house-data" style="top: 15%; left: 75%;"></div>
+                    </div>
+
                     <div class="remedy-results" id="remedy-grid" style="display: grid; margin-bottom: 50px;">
                         <!-- Perfume -->
                         <div class="remedy-item">

@@ -640,6 +640,30 @@ async function runDivineDiscovery() {
         summary += `Based on these deep placements, here are your verified remedies:`;
         document.getElementById('discovery-summary').innerHTML = summary;
 
+        // --- Render Visual Kundali Chart ---
+        const lagnaRashi = pData["Ascendant"] ? pData["Ascendant"].current_sign : 1;
+        const planetSymbols = {
+            "Sun": "Su", "Moon": "Mo", "Mars": "Ma", "Mercury": "Me",
+            "Jupiter": "Ju", "Venus": "Ve", "Saturn": "Sa", "Rahu": "Ra", "Ketu": "Ke"
+        };
+
+        for (let hNum = 1; hNum <= 12; hNum++) {
+            const houseRashi = ((lagnaRashi + hNum - 2) % 12) + 1;
+            const houseEl = document.getElementById(`house-${hNum}`);
+            if (!houseEl) continue;
+
+            houseEl.innerHTML = `<span class="house-label">${houseRashi}</span>`;
+            
+            const planetsInHouse = [];
+            for (const [pName, pObj] of Object.entries(pData)) {
+                if (planetSymbols[pName] && pObj.current_sign === houseRashi) {
+                    const isAK = pName === ak;
+                    planetsInHouse.push(`<span class="${isAK ? 'ak-highlight' : ''}">${planetSymbols[pName]}${isAK ? '★' : ''}</span>`);
+                }
+            }
+            houseEl.innerHTML += planetsInHouse.join(" ");
+        }
+
         const rem = remedyLibrary[ak] || remedyLibrary["Sun"];
         document.getElementById('rem-perfume').innerText = rem.perfume;
         document.getElementById('rem-rudraksha').innerText = rem.rudraksha;

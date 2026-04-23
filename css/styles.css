@@ -1524,3 +1524,45 @@ textarea.form-control {
     background: var(--primary);
     color: #0a0a20;
 }
+
+/* ==================== KUNDALI CHART (NORTH INDIAN) ==================== */
+.kundali-chart {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 40px auto;
+}
+
+.kundali-svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--primary);
+    stroke-width: 1;
+    fill: none;
+    filter: drop-shadow(0 0 5px rgba(198, 161, 91, 0.2));
+}
+
+.house-data {
+    position: absolute;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 70px;
+    pointer-events: none;
+    line-height: 1.2;
+}
+
+.house-label {
+    font-size: 0.65rem;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 2px;
+    opacity: 0.8;
+}
+
+.ak-highlight {
+    color: #FFD700 !important;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    font-weight: 700;
+}
