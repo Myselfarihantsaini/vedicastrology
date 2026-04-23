@@ -568,16 +568,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ---- Divine Discovery Logic (D1 & D9) ----
 const remedyLibrary = {
-    "Sun": { perfume: "Oudh & Saffron", rudraksha: "12 Mukhi", gem: "Ruby / Garnet", link: "https://wa.me/919057918251?text=Order%20Sun%20Remedies" },
-    "Moon": { perfume: "Jasmine & Musk", rudraksha: "2 Mukhi", gem: "Pearl / Moonstone", link: "https://wa.me/919057918251?text=Order%20Moon%20Remedies" },
-    "Mars": { perfume: "Sandalwood & Spice", rudraksha: "3 Mukhi", gem: "Red Coral / Carnelian", link: "https://wa.me/919057918251?text=Order%20Mars%20Remedies" },
-    "Mercury": { perfume: "Vetiver & Mint", rudraksha: "4 Mukhi", gem: "Emerald / Peridot", link: "https://wa.me/919057918251?text=Order%20Mercury%20Remedies" },
-    "Jupiter": { perfume: "Gold Amber & Lotus", rudraksha: "5 Mukhi", gem: "Yellow Sapphire / Citrine", link: "https://wa.me/919057918251?text=Order%20Jupiter%20Remedies" },
-    "Venus": { perfume: "Rose & White Lily", rudraksha: "6 Mukhi", gem: "Diamond / White Topaz", link: "https://wa.me/919057918251?text=Order%20Venus%20Remedies" },
-    "Saturn": { perfume: "Patchouli & Cedar", rudraksha: "7 Mukhi", gem: "Blue Sapphire / Amethyst", link: "https://wa.me/919057918251?text=Order%20Saturn%20Remedies" },
-    "Rahu": { perfume: "Frankincense & Smoke", rudraksha: "8 Mukhi", gem: "Hessonite / Gomed", link: "https://wa.me/919057918251?text=Order%20Rahu%20Remedies" },
-    "Ketu": { perfume: "Camphor & Earth", rudraksha: "9 Mukhi", gem: "Cat's Eye / Tiger Eye", link: "https://wa.me/919057918251?text=Order%20Ketu%20Remedies" }
+    "Sun": { 
+        perfume: "Oudh & Saffron", rudraksha: "12 Mukhi", stone: "Sunstone", gem: "Ruby", 
+        advice: "To ignite your internal fire and soul authority.", 
+        link: "https://wa.me/919057918251?text=Order%20Sun%20Remedies" 
+    },
+    "Moon": { 
+        perfume: "Jasmine & White Sandal", rudraksha: "2 Mukhi", stone: "Moonstone", gem: "Pearl", 
+        advice: "To soothe the mind and stabilize emotional tides.", 
+        link: "https://wa.me/919057918251?text=Order%20Moon%20Remedies" 
+    },
+    "Mars": { 
+        perfume: "Musk & Red Cedar", rudraksha: "3 Mukhi", stone: "Carnelian", gem: "Red Coral", 
+        advice: "To channel courage and protective energy.", 
+        link: "https://wa.me/919057918251?text=Order%20Mars%20Remedies" 
+    },
+    "Mercury": { 
+        perfume: "Vetiver & Basil", rudraksha: "4 Mukhi", stone: "Peridot", gem: "Emerald", 
+        advice: "To sharpen the intellect and verbal flow.", 
+        link: "https://wa.me/919057918251?text=Order%20Mercury%20Remedies" 
+    },
+    "Jupiter": { 
+        perfume: "Amber & Lotus", rudraksha: "5 Mukhi", stone: "Citrine", gem: "Yellow Sapphire", 
+        advice: "To expand wisdom and attract abundance.", 
+        link: "https://wa.me/919057918251?text=Order%20Jupiter%20Remedies" 
+    },
+    "Venus": { 
+        perfume: "Rose & White Lily", rudraksha: "6 Mukhi", stone: "White Topaz", gem: "Diamond", 
+        advice: "To enhance attraction, art, and luxury.", 
+        link: "https://wa.me/919057918251?text=Order%20Venus%20Remedies" 
+    },
+    "Saturn": { 
+        perfume: "Patchouli & Myrrh", rudraksha: "7 Mukhi", stone: "Amethyst", gem: "Blue Sapphire", 
+        advice: "To bring discipline, stability, and karmic clearance.", 
+        link: "https://wa.me/919057918251?text=Order%20Saturn%20Remedies" 
+    },
+    "Rahu": { 
+        perfume: "Frankincense & Smoke", rudraksha: "8 Mukhi", stone: "Tiger Eye", gem: "Hessonite", 
+        advice: "To clear illusion and navigate sudden change.", 
+        link: "https://wa.me/919057918251?text=Order%20Rahu%20Remedies" 
+    },
+    "Ketu": { 
+        perfume: "Camphor & Earth", rudraksha: "9 Mukhi", stone: "Lapis Lazuli", gem: "Cat's Eye", 
+        advice: "To deepen intuition and spiritual detachment.", 
+        link: "https://wa.me/919057918251?text=Order%20Ketu%20Remedies" 
+    }
 };
+
+function renderRemedyPortal(ak, mahadasha) {
+    const portal = document.getElementById('remedy-portal-content');
+    if (!portal) return;
+
+    const akRem = remedyLibrary[ak] || remedyLibrary["Sun"];
+    const mdRem = remedyLibrary[mahadasha] || remedyLibrary["Sun"];
+
+    const items = [
+        { type: "Essence", name: akRem.perfume, icon: "🌬️", tag: "Soul Signature", advice: akRem.advice, link: akRem.link },
+        { type: "Rudraksha", name: akRem.rudraksha, icon: "📿", tag: "Divine Shield", advice: akRem.advice, link: akRem.link },
+        { type: "Semi-Precious", name: mdRem.stone, icon: "✨", tag: "Timeline Balancer", advice: mdRem.advice, link: mdRem.link },
+        { type: "Gemstone", name: akRem.gem, icon: "💎", tag: "Primary Catalyst", advice: akRem.advice, link: akRem.link }
+    ];
+
+    portal.innerHTML = items.map(item => `
+        <div class="remedy-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(198,161,91,0.1); padding: 25px; border-radius: 20px; text-align: center; transition: all 0.3s ease;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">${item.icon}</div>
+            <span style="font-size: 0.65rem; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">${item.tag}</span>
+            <h4 style="color: var(--text-light); margin: 10px 0; font-size: 1.2rem;">${item.name}</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px;">${item.advice}</p>
+            <a href="${item.link}" target="_blank" style="display: block; padding: 12px; background: rgba(198, 161, 91, 0.1); color: var(--primary-light); text-decoration: none; border-radius: 10px; font-size: 0.8rem; font-weight: 600; border: 1px solid rgba(198, 161, 91, 0.2);">Acquire ${item.type} →</a>
+        </div>
+    `).join("");
+}
 
 function calculateNavamsha(rashi, deg) {
     const navIndex = Math.floor(deg / (30 / 9)); // 0 to 8
@@ -692,14 +753,7 @@ async function runDivineDiscovery() {
             pDataD9[p] = { current_sign: calculateNavamsha(d.current_sign, d.normDegree) };
         }
         renderChart("d9", lagnaRashiD9, pDataD9, ak);
-        const rem = remedyLibrary[ak] || remedyLibrary["Sun"];
-        document.getElementById('rem-perfume').innerText = rem.perfume;
-        document.getElementById('rem-rudraksha').innerText = rem.rudraksha;
-        document.getElementById('rem-gem').innerText = rem.gem;
-        
-        document.getElementById('link-perfume').href = rem.link;
-        document.getElementById('link-rudraksha').href = rem.link;
-        document.getElementById('link-gem').href = rem.link;
+        renderRemedyPortal(ak, currentMahadasha);
 
     } catch (e) {
         console.error("Discovery Error:", e);
