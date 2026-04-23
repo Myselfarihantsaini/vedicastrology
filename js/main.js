@@ -640,31 +640,55 @@ async function runDivineDiscovery() {
         summary += `Based on these deep placements, here are your verified remedies:`;
         document.getElementById('discovery-summary').innerHTML = summary;
 
-        // --- Render Visual Kundali Chart ---
-        const lagnaRashi = pData["Ascendant"] ? pData["Ascendant"].current_sign : 1;
+        // --- Render Dual Charts (D1 & D9) ---
         const planetSymbols = {
             "Sun": "Su", "Moon": "Mo", "Mars": "Ma", "Mercury": "Me",
             "Jupiter": "Ju", "Venus": "Ve", "Saturn": "Sa", "Rahu": "Ra", "Ketu": "Ke"
         };
 
-        for (let hNum = 1; hNum <= 12; hNum++) {
-            const houseRashi = ((lagnaRashi + hNum - 2) % 12) + 1;
-            const houseEl = document.getElementById(`house-${hNum}`);
-            if (!houseEl) continue;
+        // D1 Logic
+        const lagnaRashiD1 = pData["Ascendant"] ? pData["Ascendant"].current_sign : 1;
+        renderChart("d1", lagnaRashiD1, pData, ak);
 
-            houseEl.innerHTML = `<span class="house-label">${houseRashi}</span>`;
-            
-            const planetsInHouse = [];
-            for (const [pName, pObj] of Object.entries(pData)) {
-                if (planetSymbols[pName] && pObj.current_sign === houseRashi) {
-                    const isAK = pName === ak;
-                    planetsInHouse.push(`<span class="${isAK ? 'ak-highlight' : ''}">${planetSymbols[pName]}${isAK ? '★' : ''}</span>`);
-                }
-            }
-            houseEl.innerHTML += planetsInHouse.join(" ");
+        // D9 Logic
+        // For D9, we assume lagna is roughly the same or we calculate it if available
+        const lagnaRashiD9 = calculateNavamsha(pData["Ascendant"] ? pData["Ascendant"].normDegree : 0);
+        
+        // Prepare D9 data object
+        const pDataD9 = {};
+        for (const [p, d] of Object.entries(pData)) {
+            pDataD9[p] = { current_sign: calculateNavamsha(d.normDegree) };
         }
+        renderChart("d9", lagnaRashiD9, pDataD9, ak);
+    } catch (e) {
+        alert("System busy. Please try again.");
+    }
+}
 
-        const rem = remedyLibrary[ak] || remedyLibrary["Sun"];
+function renderChart(prefix, lagna, data, ak) {
+    for (let hNum = 1; hNum <= 12; hNum++) {
+        const houseRashi = ((lagna + hNum - 2) % 12) + 1;
+        const houseEl = document.getElementById(`${prefix}-house-${hNum}`);
+        if (!houseEl) continue;
+
+        houseEl.innerHTML = `<span class="house-label">${houseRashi}</span>`;
+        
+        const planetsInHouse = [];
+        const planetSymbols = {
+            "sun": "Su", "moon": "Mo", "mars": "Ma", "mercury": "Me",
+            "jupiter": "Ju", "venus": "Ve", "saturn": "Sa", "rahu": "Ra", "ketu": "Ke"
+        };
+
+        for (let [pName, pObj] of Object.entries(data)) {
+            let pNameLower = pName.toLowerCase();
+            if (planetSymbols[pNameLower] && pObj.current_sign === houseRashi) {
+                const isAK = pNameLower === ak.toLowerCase();
+                planetsInHouse.push(`<span class="${isAK ? 'ak-highlight' : ''}">${planetSymbols[pNameLower]}${isAK ? '★' : ''}</span>`);
+            }
+        }
+        houseEl.innerHTML += planetsInHouse.join(" ");
+    }
+}
         document.getElementById('rem-perfume').innerText = rem.perfume;
         document.getElementById('rem-rudraksha').innerText = rem.rudraksha;
         document.getElementById('rem-gem').innerText = rem.gem;
