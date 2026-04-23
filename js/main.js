@@ -566,6 +566,33 @@ document.addEventListener('DOMContentLoaded', () => {
     initChatFab();
     fetchNavagrahaTransits();
     initAudio();
+    initReviewStars();
 
     setTimeout(initScrollReveal, 100);
 });
+
+function initReviewStars() {
+    const starContainer = document.getElementById('star-rating');
+    if (!starContainer) return;
+
+    const stars = starContainer.querySelectorAll('.star-input');
+    const starsValue = document.getElementById('stars-value');
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            const val = star.getAttribute('data-value');
+            starsValue.value = val;
+            
+            stars.forEach(s => {
+                if (s.getAttribute('data-value') <= val) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // Set 5 stars by default
+    stars[4].click();
+}
