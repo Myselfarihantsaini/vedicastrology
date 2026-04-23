@@ -621,36 +621,45 @@
                 <!-- Results Display -->
                 <div id="discovery-results-state" style="display: none;">
                     <div style="text-align: center; margin-bottom: 30px;">
-                        <h3 id="discovery-user-name">Welcome, Traveler</h3>
-                        <p id="discovery-summary" style="color: var(--text-muted); font-size: 0.95rem;"></p>
+                        <h3 id="discovery-user-name" style="font-family: var(--font-serif); font-size: 2rem;">Sacred Analysis Complete</h3>
+                        <p id="discovery-summary" style="color: var(--text-muted); font-size: 1rem; line-height: 1.8; max-width: 700px; margin: 0 auto;"></p>
                     </div>
 
-                    <div class="remedy-results" id="remedy-grid" style="display: grid;">
+                    <div class="remedy-results" id="remedy-grid" style="display: grid; margin-bottom: 50px;">
                         <!-- Perfume -->
                         <div class="remedy-item">
                             <span class="remedy-icon">🌬️</span>
-                            <div class="remedy-title">Signature Essence</div>
+                            <div class="remedy-title">Your Signature Essence</div>
                             <div class="remedy-name" id="rem-perfume">Loading...</div>
-                            <a href="#" id="link-perfume" class="btn-threads btn-remedy">Get Essence</a>
+                            <a href="#" id="link-perfume" class="btn-threads btn-remedy" target="_blank">Acquire Essence</a>
                         </div>
                         <!-- Rudraksha -->
                         <div class="remedy-item">
                             <span class="remedy-icon">📿</span>
-                            <div class="remedy-title">Soul Rudraksha</div>
+                            <div class="remedy-title">Your Soul Rudraksha</div>
                             <div class="remedy-name" id="rem-rudraksha">Loading...</div>
-                            <a href="#" id="link-rudraksha" class="btn-threads btn-remedy">Get Bead</a>
+                            <a href="#" id="link-rudraksha" class="btn-threads btn-remedy" target="_blank">Acquire Bead</a>
                         </div>
                         <!-- Gemstone -->
                         <div class="remedy-item">
                             <span class="remedy-icon">💎</span>
-                            <div class="remedy-title">Guiding Gem</div>
+                            <div class="remedy-title">Your Guiding Gem</div>
                             <div class="remedy-name" id="rem-gem">Loading...</div>
-                            <a href="#" id="link-gem" class="btn-threads btn-remedy">Get Gem</a>
+                            <a href="#" id="link-gem" class="btn-threads btn-remedy" target="_blank">Acquire Gem</a>
                         </div>
                     </div>
                     
-                    <button onclick="resetDiscovery()" class="btn-threads" style="margin-top: 40px; width: 100%;">
-                        <span>Reset Calculation</span>
+                    <!-- THE SACRED PORTAL BUTTON -->
+                    <div style="text-align: center; padding: 40px; border-top: 1px solid var(--border-subtle); background: rgba(198, 161, 91, 0.03); border-radius: 0 0 30px 30px;">
+                        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;">For a deep, multi-dimensional analysis of these remedies and your soul's blueprint:</p>
+                        <a href="https://chatgpt.com/g/g-your-placeholder-link" id="sacred-portal-link" class="btn-primary" style="padding: 18px 40px; font-size: 1.1rem; box-shadow: 0 0 30px rgba(198, 161, 91, 0.2);">
+                            <span>Enter the Sacred Chamber ✦</span>
+                        </a>
+                        <p style="margin-top: 20px; font-size: 0.8rem; color: var(--primary); opacity: 0.7; letter-spacing: 1px; text-transform: uppercase;">Private Consultation Portal</p>
+                    </div>
+
+                    <button onclick="resetDiscovery()" class="btn-threads" style="margin-top: 40px; width: 100%; border: none; opacity: 0.5;">
+                        <span>Recalculate Chart</span>
                     </button>
                 </div>
             </div>
