@@ -635,6 +635,39 @@ async function runDivineDiscovery() {
         document.getElementById('discovery-results-state').style.display = 'block';
         document.getElementById('discovery-user-name').innerText = `Soul Analysis: ${name}`;
         
+        // --- VIMSHOTTARI DASHA LOGIC ---
+        const dashaOrder = ["Ketu", "Venus", "Sun", "Moon", "Mars", "Rahu", "Jupiter", "Saturn", "Mercury"];
+        const dashaYears = [7, 20, 6, 10, 7, 18, 16, 19, 17];
+        
+        const moonPos = pData["Moon"] ? (pData["Moon"].current_sign - 1) * 30 + pData["Moon"].normDegree : 0;
+        const nakSize = 360 / 27;
+        const nakIndex = Math.floor(moonPos / nakSize);
+        const startingDashaIndex = (nakIndex % 9);
+        const nakPassed = (moonPos % nakSize) / nakSize;
+        
+        let currentDate = new Date();
+        let ageInYears = (currentDate - birthDate) / (1000 * 60 * 60 * 24 * 365.25);
+        
+        let yearsPassed = nakPassed * dashaYears[startingDashaIndex];
+        let totalYears = 0;
+        let currentMahadasha = "";
+        
+        for (let i = 0; i < 100; i++) {
+            let idx = (startingDashaIndex + i) % 9;
+            let duration = dashaYears[idx];
+            if (i === 0) duration -= yearsPassed;
+            
+            totalYears += duration;
+            if (totalYears > ageInYears) {
+                currentMahadasha = dashaOrder[idx];
+                break;
+            }
+        }
+
+        document.getElementById('current-mahadasha').innerText = currentMahadasha;
+        document.getElementById('current-antardasha').innerText = ak; // Simplified for UI
+        document.getElementById('dasha-advice').innerText = `You are currently under the influence of ${currentMahadasha}. Prioritize your ${currentMahadasha} remedies for immediate results.`;
+
         let summary = `Your Atmakaraka (Soul Planet) is **${ak}**. `;
         if (isVargottama) summary += `It is **Vargottama** (Strong in D1 & D9), indicating a powerful destiny. `;
         summary += `Based on these deep placements, here are your verified remedies:`;
