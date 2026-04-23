@@ -52,6 +52,7 @@ const postsData = [
         image: "assets/venus_health_framework.png",
         category: "Planetary Health"
     },
+    {
         id: "venus-in-all-12-houses",
         title: "Venus in All 12 Houses — Detailed Interpretation",
         date: "April 23, 2026",
