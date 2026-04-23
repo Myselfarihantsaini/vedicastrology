@@ -579,11 +579,15 @@ const remedyLibrary = {
     "Ketu": { perfume: "Camphor & Earth", rudraksha: "9 Mukhi", gem: "Cat's Eye / Tiger Eye", link: "https://wa.me/919057918251?text=Order%20Ketu%20Remedies" }
 };
 
-function calculateNavamsha(deg) {
-    const totalMinutes = deg * 60;
-    const navMinutes = 200; // 3 deg 20 min
-    const navIndex = Math.floor(totalMinutes / navMinutes);
-    return (navIndex % 12) + 1;
+function calculateNavamsha(rashi, deg) {
+    const navIndex = Math.floor(deg / (30 / 9)); // 0 to 8
+    let startSign = 1;
+    if ([1, 5, 9].includes(rashi)) startSign = 1;         // Fire: Starts from Aries
+    else if ([2, 6, 10].includes(rashi)) startSign = 10;  // Earth: Starts from Capricorn
+    else if ([3, 7, 11].includes(rashi)) startSign = 7;   // Air: Starts from Libra
+    else if ([4, 8, 12].includes(rashi)) startSign = 4;   // Water: Starts from Cancer
+    
+    return ((startSign + navIndex - 1) % 12) + 1;
 }
 
 async function runDivineDiscovery() {
@@ -623,7 +627,7 @@ async function runDivineDiscovery() {
         }
 
         const d1_sign = pData[ak].current_sign;
-        const d9_sign = calculateNavamsha(pData[ak].normDegree);
+        const d9_sign = calculateNavamsha(pData[ak].current_sign, pData[ak].normDegree);
         const isVargottama = d1_sign === d9_sign;
 
         document.getElementById('discovery-input-state').style.display = 'none';
@@ -680,12 +684,12 @@ async function runDivineDiscovery() {
 
         // D9 Logic
         // For D9, we assume lagna is roughly the same or we calculate it if available
-        const lagnaRashiD9 = calculateNavamsha(pData["Ascendant"] ? pData["Ascendant"].normDegree : 0);
+        const lagnaRashiD9 = calculateNavamsha(pData["Ascendant"] ? pData["Ascendant"].current_sign : 1, pData["Ascendant"] ? pData["Ascendant"].normDegree : 0);
         
         // Prepare D9 data object
         const pDataD9 = {};
         for (const [p, d] of Object.entries(pData)) {
-            pDataD9[p] = { current_sign: calculateNavamsha(d.normDegree) };
+            pDataD9[p] = { current_sign: calculateNavamsha(d.current_sign, d.normDegree) };
         }
         renderChart("d9", lagnaRashiD9, pDataD9, ak);
         const rem = remedyLibrary[ak] || remedyLibrary["Sun"];
