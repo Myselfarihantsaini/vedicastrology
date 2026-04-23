@@ -340,7 +340,11 @@ async function fetchNavagrahaTransits() {
         if (!response.ok) throw new Error("API response not ok");
 
         const data = await response.json();
-        if (data.statusCode !== 200 || !data.output || !data.output[1]) throw new Error("Invalid API structure");
+        
+        // If API returns a limit error or invalid structure, trigger fallback
+        if (data.message === "Limit Exceeded" || data.statusCode !== 200 || !data.output || !data.output[1]) {
+            throw new Error("API Limit or Invalid Data");
+        }
 
         currentPlanetData = data.output[1];
         renderTransits();
