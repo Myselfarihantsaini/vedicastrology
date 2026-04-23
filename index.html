@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shambhava — Daily Vedic Astrology Insights & Horoscopes</title>
     <meta name="description" content="Explore deep Vedic Astrology insights, daily horoscopes, planetary transits, and spiritual guidance. Free daily readings by Arihant Saini.">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0B1020">
     <meta name="keywords" content="Vedic Astrology, Jyotish, Horoscope, Daily Horoscope, Planetary Transit, Zodiac, Nakshatra, Kundali">
+    <link rel="canonical" href="https://myselfarihantsaini.github.io/">
     <meta property="og:title" content="Shambhava — Daily Vedic Astrology">
     <meta property="og:description" content="Deep Vedic Astrology insights, daily horoscopes, and spiritual guidance.">
-    <meta property="og:image" content="assets/cosmic_banner.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myselfarihantsaini.github.io/">
+    <meta property="og:image" content="https://myselfarihantsaini.github.io/assets/cosmic_banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shambhava — Daily Vedic Astrology">
+    <meta name="twitter:description" content="Deep Vedic Astrology insights, daily horoscopes, and spiritual guidance.">
+    <meta name="twitter:image" content="https://myselfarihantsaini.github.io/assets/cosmic_banner.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -33,7 +42,7 @@
 </head>
 <body>
     <!-- Animated Stars Background -->
-    <canvas id="stars-canvas"></canvas>
+    <canvas id="stars-canvas" aria-hidden="true"></canvas>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -55,7 +64,7 @@
                     Book Now
                 </a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -564,13 +573,16 @@
                     <input type="hidden" name="stars" id="stars-value" value="5">
 
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        <label class="sr-only" for="review-name">Your Name</label>
+                        <input type="text" id="review-name" name="name" class="form-control" placeholder="Your Name" autocomplete="name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        <label class="sr-only" for="review-email">Your Email</label>
+                        <input type="email" id="review-email" name="email" class="form-control" placeholder="Your Email" autocomplete="email" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" class="form-control" rows="4" placeholder="Your Review..." required></textarea>
+                        <label class="sr-only" for="review-message">Your Review</label>
+                        <textarea id="review-message" name="message" class="form-control" rows="4" placeholder="Your Review..." required></textarea>
                     </div>
                     
                     <button type="submit" class="btn-primary btn-submit-review">
@@ -742,27 +754,27 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What details do I need to provide? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">What details do I need to provide? <span class="faq-icon" aria-hidden="true">+</span></button>
                     <div class="faq-answer"><p>You need your <strong>date of birth, exact time of birth, and place of birth</strong>. Accurate birth time is critical for chart precision. If unsure, consider the Birth Time Rectification service.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How long does a consultation take? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">How long does a consultation take? <span class="faq-icon" aria-hidden="true">+</span></button>
                     <div class="faq-answer"><p>Standard readings take <strong>30–60 minutes</strong>. Full birth chart consultations can take up to 90 minutes. Sessions are delivered via WhatsApp or call, as you prefer.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How do I book? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">How do I book? <span class="faq-icon" aria-hidden="true">+</span></button>
                     <div class="faq-answer"><p>Click any <strong>"Book" button</strong> on the page — it opens a WhatsApp chat directly. Share your birth details and preferred service, and a session will be confirmed.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is this prediction or guidance? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">Is this prediction or guidance? <span class="faq-icon" aria-hidden="true">+</span></button>
                     <div class="faq-answer"><p>This is <strong>structured Jyotish-based guidance</strong> — not vague prediction. Every reading uses natal promise (D1), Dasha timing, and transit confirmation. The goal is clarity with direction.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can Jyotish change my destiny? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">Can Jyotish change my destiny? <span class="faq-icon" aria-hidden="true">+</span></button>
                     <div class="faq-answer"><p>Jyotish <strong>illuminates the pattern</strong> — it does not change destiny. Remedies and correct timing reduce difficult periods and amplify favourable ones.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do you offer follow-up sessions? <span class="faq-icon">+</span></button>
+                    <button class="faq-question" type="button">Do you offer follow-up sessions? <span class="faq-icon" aria-hidden="true">+</span></button>
                     <div class="faq-answer"><p>Yes. Follow-ups are available for existing clients — focused on <strong>transit updates, new questions, or progress review</strong> within the same chart.</p></div>
                 </div>
             </div>
@@ -802,7 +814,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" style="flex-shrink: 0;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
 
-    <script src="js/data.js?v=5.0"></script>
+    <script src="js/shambhava_vault.js?v=4.0"></script>
     <script src="js/main.js?v=4.0"></script>
 </body>
 </html>
