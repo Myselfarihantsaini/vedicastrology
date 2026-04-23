@@ -347,10 +347,23 @@ async function fetchNavagrahaTransits() {
         setupChartSelector();
 
     } catch (error) {
-        console.error("Failed to fetch transits:", error);
-        document.querySelectorAll('[id^="transit-"]').forEach(el => {
-            if(el.innerHTML === "Loading...") el.innerHTML = "Unavailable";
-        });
+        console.warn("API Limit Reached or Failed. Using fallback data for transits.");
+        
+        // Fallback Data for April 2026 (Approximate Sidereal Positions)
+        currentPlanetData = {
+            "Sun": { current_sign: 1, normDegree: 9.5 },     // Aries
+            "Moon": { current_sign: 4, normDegree: 15.2 },   // Cancer (Varies daily)
+            "Mars": { current_sign: 11, normDegree: 22.1 },  // Aquarius
+            "Mercury": { current_sign: 1, normDegree: 2.4 }, // Aries
+            "Jupiter": { current_sign: 3, normDegree: 24.8 },// Gemini
+            "Venus": { current_sign: 12, normDegree: 28.5 }, // Pisces
+            "Saturn": { current_sign: 12, normDegree: 18.2 },// Pisces
+            "Rahu": { current_sign: 11, normDegree: 4.5 },   // Aquarius
+            "Ketu": { current_sign: 5, normDegree: 4.5 }     // Leo
+        };
+        
+        renderTransits();
+        setupChartSelector();
     }
 }
 
