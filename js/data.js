@@ -44,7 +44,8 @@ const postsData = [
             <p>If pleasure is excessive → the system becomes overloaded.<br>
             If pleasure is denied → the system becomes deprived.<br>
             If emotions are unstable → hormones fluctuate.</p>
-            <blockquote>So the governing rule is: Venus imbalance is gradual — it builds through lifestyle, emotion, and indulgence patterns.</blockquote>
+            <p>So the governing rule is:</p>
+            <blockquote>Venus imbalance is gradual — it builds through lifestyle, emotion, and indulgence patterns.</blockquote>
 
             <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
 
@@ -88,15 +89,13 @@ const postsData = [
             <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
 
             <h3>Planetary Influence on Venus Health</h3>
-            <ul>
-                <li><strong>Jupiter</strong> stabilizes and protects Venus, improving fertility, hormonal balance, and recovery.</li>
-                <li><strong>Saturn</strong> restricts Venus, creating chronic deficiency, dryness, or delayed reproductive maturity.</li>
-                <li><strong>Mars</strong> overheats Venus, causing inflammation, hormonal spikes, and reproductive stress.</li>
-                <li><strong>Moon</strong> connects emotions to hormones, making mood directly affect health.</li>
-                <li><strong>Mercury</strong> links mental stress with hormonal imbalance.</li>
-                <li><strong>Rahu</strong> amplifies excess — addiction, sugar imbalance, and overindulgence.</li>
-                <li><strong>Ketu</strong> creates detachment — irregular cycles and reduced vitality.</li>
-            </ul>
+            <p><strong>Jupiter</strong> stabilizes and protects Venus, improving fertility, hormonal balance, and recovery.<br>
+            <strong>Saturn</strong> restricts Venus, creating chronic deficiency, dryness, or delayed reproductive maturity.<br>
+            <strong>Mars</strong> overheats Venus, causing inflammation, hormonal spikes, and reproductive stress.<br>
+            <strong>Moon</strong> connects emotions to hormones, making mood directly affect health.<br>
+            <strong>Mercury</strong> links mental stress with hormonal imbalance.<br>
+            <strong>Rahu</strong> amplifies excess — addiction, sugar imbalance, and overindulgence.<br>
+            <strong>Ketu</strong> creates detachment — irregular cycles and reduced vitality.</p>
 
             <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
 
@@ -144,7 +143,7 @@ const postsData = [
             <h3>Final Conclusion</h3>
             <p>Venus governs: hormones, kidneys, reproductive system, sugar metabolism, recovery and balance. When Venus is balanced, the body maintains harmony. When Venus is disturbed, imbalance builds slowly and manifests physically over time. Health improvement through Venus is not about restriction alone — it is about balanced pleasure, emotional stability, and disciplined lifestyle.</p>
         `,
-        image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=1200",
+        image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1200",
         category: "Planetary Health"
     },
     {
