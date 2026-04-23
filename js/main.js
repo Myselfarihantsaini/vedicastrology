@@ -542,17 +542,28 @@ function initAudio() {
 
 // ---- Initialize Everything ----
 document.addEventListener('DOMContentLoaded', () => {
-    initStars();
-    initNavbar();
-    initMobileMenu();
-    renderPosts();
-    renderSinglePost();
-    initChatFab();
-    fetchNavagrahaTransits();
-    initAudio();
-    initReviewStars();
+    const safeInit = (fnName, fn) => {
+        try {
+            fn();
+            console.log(`[Init] ${fnName} successful.`);
+        } catch (e) {
+            console.warn(`[Init] ${fnName} failed:`, e);
+        }
+    };
 
-    setTimeout(initScrollReveal, 100);
+    safeInit("Stars", initStars);
+    safeInit("Navbar", initNavbar);
+    safeInit("MobileMenu", initMobileMenu);
+    safeInit("Posts", renderPosts);
+    safeInit("SinglePost", renderSinglePost);
+    safeInit("ChatFab", initChatFab);
+    safeInit("Transits", fetchNavagrahaTransits);
+    safeInit("Audio", initAudio);
+    safeInit("ReviewStars", initReviewStars);
+
+    setTimeout(() => {
+        try { initScrollReveal(); } catch(e) {}
+    }, 100);
 });
 
 // ---- Divine Discovery Logic (D1 & D9) ----
