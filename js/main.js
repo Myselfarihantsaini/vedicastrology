@@ -512,43 +512,28 @@ function updateKundli(lagnaRashi) {
     }
 }
 
-// ---- Audio Controls (Om Chant) ----
+// ---- Audio Controls (Automatic Om Chant) ----
 function initAudio() {
     const audio = document.getElementById('om-audio');
-    const toggle = document.getElementById('sound-toggle');
-    const toggleBtn = document.getElementById('sound-toggle-btn');
-    const icon = document.getElementById('sound-icon');
-    const label = document.querySelector('.sound-label');
+    if (!audio) return;
 
-    if (!audio || !toggle) return;
+    // Browser policy blocks audio unless user interacts. 
+    // We play it as soon as the user clicks anywhere or scrolls.
+    const startAudio = () => {
+        audio.play().then(() => {
+            console.log("Sacred chant started automatically.");
+            // Remove listeners once it starts
+            document.removeEventListener('click', startAudio);
+            document.removeEventListener('touchstart', startAudio);
+            document.removeEventListener('scroll', startAudio);
+        }).catch(err => {
+            // If still blocked, wait for next interaction
+        });
+    };
 
-    // Set initial state
-    let isPlaying = false;
-
-    toggle.addEventListener('mouseenter', () => { if (label) label.style.opacity = '1'; });
-    toggle.addEventListener('mouseleave', () => { if (label) label.style.opacity = '0'; });
-
-    toggle.addEventListener('click', () => {
-        if (isPlaying) {
-            audio.pause();
-            isPlaying = false;
-            toggleBtn.style.background = 'rgba(198, 161, 91, 0.15)';
-            toggleBtn.style.color = 'var(--primary)';
-            icon.innerText = 'ॐ';
-            if (label) label.innerText = 'Play Sacred Chant';
-        } else {
-            audio.play().then(() => {
-                isPlaying = true;
-                toggleBtn.style.background = 'var(--primary)';
-                toggleBtn.style.color = '#000';
-                icon.innerText = '🔕';
-                if (label) label.innerText = 'Mute Chant';
-            }).catch(err => {
-                console.error("Playback blocked:", err);
-                alert("Please click anywhere on the page first to allow audio playback.");
-            });
-        }
-    });
+    document.addEventListener('click', startAudio);
+    document.addEventListener('touchstart', startAudio);
+    document.addEventListener('scroll', startAudio, { once: true });
 }
 
 // ---- Initialize Everything ----
