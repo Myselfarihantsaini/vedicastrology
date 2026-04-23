@@ -517,8 +517,8 @@ function initAudio() {
     const audio = document.getElementById('om-audio');
     if (!audio) return;
 
-    // Set a subtle, meditative volume (15%)
-    audio.volume = 0.15;
+    // Set an ultra-subtle, meditative volume (5%)
+    audio.volume = 0.05;
 
     // Browser policy blocks audio unless user interacts. 
     // We play it as soon as the user clicks anywhere or scrolls.
