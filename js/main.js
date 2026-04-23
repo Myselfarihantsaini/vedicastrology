@@ -677,7 +677,17 @@ async function runDivineDiscovery() {
             pDataD9[p] = { current_sign: calculateNavamsha(d.normDegree) };
         }
         renderChart("d9", lagnaRashiD9, pDataD9, ak);
+        const rem = remedyLibrary[ak] || remedyLibrary["Sun"];
+        document.getElementById('rem-perfume').innerText = rem.perfume;
+        document.getElementById('rem-rudraksha').innerText = rem.rudraksha;
+        document.getElementById('rem-gem').innerText = rem.gem;
+        
+        document.getElementById('link-perfume').href = rem.link;
+        document.getElementById('link-rudraksha').href = rem.link;
+        document.getElementById('link-gem').href = rem.link;
+
     } catch (e) {
+        console.error("Discovery Error:", e);
         alert("System busy. Please try again.");
     }
 }
@@ -704,18 +714,6 @@ function renderChart(prefix, lagna, data, ak) {
             }
         }
         houseEl.innerHTML += planetsInHouse.join(" ");
-    }
-}
-        document.getElementById('rem-perfume').innerText = rem.perfume;
-        document.getElementById('rem-rudraksha').innerText = rem.rudraksha;
-        document.getElementById('rem-gem').innerText = rem.gem;
-        
-        document.getElementById('link-perfume').href = rem.link;
-        document.getElementById('link-rudraksha').href = rem.link;
-        document.getElementById('link-gem').href = rem.link;
-
-    } catch (e) {
-        alert("System busy. Please try again in a moment.");
     }
 }
 
