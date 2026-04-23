@@ -607,6 +607,7 @@ function setupChartSelector() {
 
     // Initialize with current selector value (or default to Aries if empty)
     const initialValue = selector.value || "1";
+    selector.value = initialValue;
     updateKundli(parseInt(initialValue));
 
     selector.addEventListener('change', (e) => {
