@@ -558,6 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
     safeInit("SinglePost", renderSinglePost);
     safeInit("ChatFab", initChatFab);
     safeInit("Transits", fetchNavagrahaTransits);
+    safeInit("ChartSelector", setupChartSelector);
     safeInit("Audio", initAudio);
     safeInit("ReviewStars", initReviewStars);
 

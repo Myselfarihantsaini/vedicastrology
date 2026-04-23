@@ -9,6 +9,49 @@
 
 const postsData = [
     {
+        id: "venus-and-health-framework",
+        title: "Venus & Health — Physiological, Astrological, and Transit Framework",
+        date: "April 23, 2026",
+        excerpt: "In Vedic astrology, Venus (Shukra) is critical for sustaining life quality. It governs hormones, reproductive vitality, kidney function, and the body’s ability to maintain balance and recover.",
+        content: `
+            <p>In Vedic astrology, Venus (Shukra) is one of the most critical planets for sustaining life quality. While other planets may indicate disease, Venus governs whether the body can maintain balance, recover, and function harmoniously over time. It is directly connected to hormones, reproductive vitality, kidney function, sugar metabolism, and the body’s ability to experience and process pleasure.</p>
+            <p>Venus is not a disease-causing planet in the classical sense. Instead, it controls equilibrium. When Venus is functioning well, the body naturally regulates itself — hormones stay balanced, tissues remain hydrated, and recovery happens efficiently. When Venus is disturbed, imbalance begins slowly and manifests as chronic or lifestyle-related issues rather than sudden acute illness.</p>
+
+            <h3>Core Physiological Domains of Venus</h3>
+            <p>Venus operates across multiple systems that are interconnected:</p>
+            <ul>
+                <li><strong>Hormonal / Endocrine System:</strong> Venus governs reproductive hormones and overall endocrine balance. This includes estrogen regulation, menstrual cycles, fertility timing, libido, and hormonal mood patterns.</li>
+                <li><strong>Reproductive System:</strong> Venus is the primary karaka of reproductive health. It influences fertility, sexual function, and reproductive tissue strength.</li>
+                <li><strong>Kidneys and Fluid Balance:</strong> Venus controls the renal system and fluid equilibrium. It governs filtration, hydration levels, and electrolyte balance.</li>
+                <li><strong>Sugar Metabolism and Indulgence Patterns:</strong> Venus governs sweetness — both physically and behaviorally. It influences sugar cravings, insulin response, and metabolic balance.</li>
+                <li><strong>Tissue Lubrication and Skin Health:</strong> Venus maintains softness and hydration in the body — skin glow, joint lubrication, and tissue elasticity.</li>
+            </ul>
+
+            <h3>Core Health Principle of Venus</h3>
+            <p>Venus functions through balance between pleasure and restraint. If pleasure is excessive, the system becomes overloaded. If pleasure is denied, the system becomes deprived. If emotions are unstable, hormones fluctuate. Venus imbalance is gradual — it builds through lifestyle, emotion, and indulgence patterns.</p>
+
+            <h3>House-wise Health Expression</h3>
+            <p><strong>Venus in 1st House:</strong> Directly influences vitality, hormonal balance, and appearance. Emotional stress impacts physical health quickly.</p>
+            <p><strong>Venus in 2nd House:</strong> Links health with diet. Overindulgence in rich foods and sweets can lead to sugar imbalance or throat-related issues.</p>
+            <p><strong>Venus in 3rd House:</strong> Connects with the nervous system. Overstimulation through communication or digital exposure leads to anxiety and fatigue.</p>
+            <p><strong>Venus in 4th House:</strong> Linked to chest, lungs, and emotional regulation. Stress often manifests as chest tightness or anxiety.</p>
+            <p><strong>Venus in 5th House:</strong> Influences reproductive health and heart rhythm. Emotional experiences directly impact physical well-being.</p>
+            <p><strong>Venus in 6th House:</strong> Highly sensitive placement. Vulnerability to diabetes, kidney imbalance, and hormonal disorders. Strict discipline is required.</p>
+            <p><strong>Venus in 7th House:</strong> Health strongly linked with relationships. Emotional imbalance in partnerships can affect hormonal stability.</p>
+            <p><strong>Venus in 8th House:</strong> Can indicate hidden or chronic health issues. However, if strong, it gives powerful regenerative capacity.</p>
+            <p><strong>Venus in 9th House:</strong> Linked with liver function and fat metabolism. Moderation is essential to avoid long-term metabolic issues.</p>
+            <p><strong>Venus in 10th House:</strong> Health influenced by career pressure. Stress can disturb hormonal rhythm and reduce recovery capacity.</p>
+            <p><strong>Venus in 11th House:</strong> Social life overindulgence (food, pleasure) can affect circulation and metabolic balance.</p>
+            <p><strong>Venus in 12th House:</strong> Governs sleep, recovery, and reproductive depletion. Weakness leads to fatigue or sleep disorders.</p>
+
+            <h3>Venus Transit Through Houses</h3>
+            <p>Venus transits do not create disease but reveal imbalance. For example, a transit through the 6th house is a critical health phase where existing issues related to sugar or kidneys surface. Conversely, a transit through the 4th house is an ideal time for emotional rest and physical recovery.</p>
+
+            <blockquote>Health improvement through Venus is not about restriction alone — it is about balanced pleasure, emotional stability, and disciplined lifestyle.</blockquote>
+        `,
+        image: "assets/venus_health_framework.png",
+        category: "Planetary Health"
+    },
         id: "venus-in-all-12-houses",
         title: "Venus in All 12 Houses — Detailed Interpretation",
         date: "April 23, 2026",
