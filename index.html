@@ -162,6 +162,150 @@
         </div>
     </section>
 
+    <!-- Navagraha Transits Section -->
+    <section id="navagraha-transits" class="section navagraha-section" style="background: rgba(11, 16, 32, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+        <div class="container" style="max-width: 1200px;">
+            <div class="section-header">
+                <span class="section-tag">Current Alignments</span>
+                <h2>Navagraha <span class="text-gradient">Transits</span></h2>
+                <p>The current positions of all 9 planets shaping global and personal karma.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <!-- Sun -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">☉</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Sun (Surya)</span>
+                        <h4 id="transit-sun" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+                <!-- Moon -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">☽</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Moon (Chandra)</span>
+                        <h4 id="transit-moon" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+                <!-- Mars -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">♂</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Mars (Mangal)</span>
+                        <h4 id="transit-mars" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+                <!-- Mercury -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">☿</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Mercury (Budh)</span>
+                        <h4 id="transit-mercury" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+                <!-- Jupiter -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">♃</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Jupiter (Guru)</span>
+                        <h4 id="transit-jupiter" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+                <!-- Venus -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">♀</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Venus (Shukra)</span>
+                        <h4 id="transit-venus" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+                <!-- Saturn -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">♄</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Saturn (Shani)</span>
+                        <h4 id="transit-saturn" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+                <!-- Rahu -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">☊</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">North Node (Rahu)</span>
+                        <h4 id="transit-rahu" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+                <!-- Ketu -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 24px; border-radius: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 2rem; color: var(--primary); background: rgba(198, 161, 91, 0.1); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">☋</div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">South Node (Ketu)</span>
+                        <h4 id="transit-ketu" style="color: var(--text-light); font-size: 1.1rem; margin-top: 4px; margin-bottom: 4px;">Loading...</h4>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Transit Chart -->
+    <section id="gochar-chart-section" class="section" style="background: rgba(11, 16, 32, 0.4); border-bottom: 1px solid var(--border-subtle);">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <div class="section-header">
+                <span class="section-tag">Personalized Gochar</span>
+                <h2>Your <span class="text-gradient">Transit Chart</span></h2>
+                <p>Select your Moon Sign (Rashi) to see how today's planets align in your personal Kundli.</p>
+            </div>
+            
+            <div style="margin-bottom: 40px;">
+                <select id="rashi-selector" class="form-control" style="max-width: 300px; margin: 0 auto; display: inline-block; cursor: pointer; text-align: center; font-weight: bold; color: var(--primary);">
+                    <option value="" disabled selected>Select Your Moon Sign...</option>
+                    <option value="1">Aries (Mesh)</option>
+                    <option value="2">Taurus (Vrishabh)</option>
+                    <option value="3">Gemini (Mithun)</option>
+                    <option value="4">Cancer (Kark)</option>
+                    <option value="5">Leo (Simha)</option>
+                    <option value="6">Virgo (Kanya)</option>
+                    <option value="7">Libra (Tula)</option>
+                    <option value="8">Scorpio (Vrishchik)</option>
+                    <option value="9">Sagittarius (Dhanu)</option>
+                    <option value="10">Capricorn (Makar)</option>
+                    <option value="11">Aquarius (Kumbh)</option>
+                    <option value="12">Pisces (Meen)</option>
+                </select>
+            </div>
+
+            <!-- North Indian Chart SVG Container -->
+            <div id="chart-container" style="position: relative; width: 100%; max-width: 350px; margin: 0 auto; aspect-ratio: 1/1; background: rgba(255,255,255,0.01); border: 2px solid var(--primary); border-radius: 4px;">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="stroke: var(--primary-dark); stroke-width: 0.8; fill: none;">
+                    <rect x="0" y="0" width="100" height="100" />
+                    <line x1="0" y1="0" x2="100" y2="100" />
+                    <line x1="100" y1="0" x2="0" y2="100" />
+                    <line x1="50" y1="0" x2="100" y2="50" />
+                    <line x1="100" y1="50" x2="50" y2="100" />
+                    <line x1="50" y1="100" x2="0" y2="50" />
+                    <line x1="0" y1="50" x2="50" y2="0" />
+                </svg>
+
+                <!-- Houses -->
+                <div id="house-1" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 40%; color: var(--text-light); font-size: 0.9rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-2" style="position: absolute; top: 12%; left: 25%; transform: translate(-50%, -50%); text-align: center; width: 40%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-3" style="position: absolute; top: 25%; left: 12%; transform: translate(-50%, -50%); text-align: center; width: 25%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-4" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); text-align: center; width: 40%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-5" style="position: absolute; top: 75%; left: 12%; transform: translate(-50%, -50%); text-align: center; width: 25%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-6" style="position: absolute; top: 88%; left: 25%; transform: translate(-50%, -50%); text-align: center; width: 40%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-7" style="position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 40%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-8" style="position: absolute; top: 88%; left: 75%; transform: translate(-50%, -50%); text-align: center; width: 40%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-9" style="position: absolute; top: 75%; left: 88%; transform: translate(-50%, -50%); text-align: center; width: 25%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-10" style="position: absolute; top: 50%; left: 75%; transform: translate(-50%, -50%); text-align: center; width: 40%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-11" style="position: absolute; top: 25%; left: 88%; transform: translate(-50%, -50%); text-align: center; width: 25%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+                <div id="house-12" style="position: absolute; top: 12%; left: 75%; transform: translate(-50%, -50%); text-align: center; width: 40%; color: var(--text-light); font-size: 0.8rem; font-weight: bold; line-height: 1.2;"></div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">Watch the planetary energies shift instantly as you change your reference point.</p>
+        </div>
+    </section>
+
     <!-- Daily Insights Section -->
     <main id="daily-insights" class="section">
         <div class="container">

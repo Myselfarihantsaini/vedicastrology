@@ -305,6 +305,213 @@ function initChatFab() {
     }, 15000); // Trigger after 15 seconds of page load
 }
 
+// ---- Fetch Live Navagraha Transits ----
+let currentPlanetData = null;
+
+async function fetchNavagrahaTransits() {
+    if (!document.getElementById('navagraha-transits')) return;
+
+    const apiKey = "SXtTRo49Uv4ZwB4oP7VqF6fBcrrmwDAa7C4wU0yV";
+    const today = new Date();
+    
+    const requestData = {
+        year: today.getFullYear(),
+        month: today.getMonth() + 1,
+        date: today.getDate(),
+        hours: today.getHours(),
+        minutes: today.getMinutes(),
+        seconds: today.getSeconds(),
+        latitude: 28.6139,
+        longitude: 77.2090,
+        timezone: 5.5,
+        settings: { system: "vedic" }
+    };
+
+    try {
+        const response = await fetch("https://json.freeastrologyapi.com/planets", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": apiKey
+            },
+            body: JSON.stringify(requestData)
+        });
+
+        if (!response.ok) throw new Error("API response not ok");
+
+        const data = await response.json();
+        if (data.statusCode !== 200 || !data.output || !data.output[1]) throw new Error("Invalid API structure");
+
+        currentPlanetData = data.output[1];
+        renderTransits();
+        setupChartSelector();
+
+    } catch (error) {
+        console.error("Failed to fetch transits:", error);
+        document.querySelectorAll('[id^="transit-"]').forEach(el => {
+            if(el.innerHTML === "Loading...") el.innerHTML = "Unavailable";
+        });
+    }
+}
+
+function renderTransits() {
+    if (!currentPlanetData) return;
+
+    const signs = {
+        1: "Aries", 2: "Taurus", 3: "Gemini", 4: "Cancer",
+        5: "Leo", 6: "Virgo", 7: "Libra", 8: "Scorpio",
+        9: "Sagittarius", 10: "Capricorn", 11: "Aquarius", 12: "Pisces"
+    };
+
+    const statuses = {
+        "Sun": {1: "Exalted", 5: "Own Sign", 7: "Debilitated"},
+        "Moon": {2: "Exalted", 4: "Own Sign", 8: "Debilitated"},
+        "Mars": {10: "Exalted", 1: "Own Sign", 8: "Own Sign", 4: "Debilitated"},
+        "Mercury": {6: "Exalted/Own", 3: "Own Sign", 12: "Debilitated"},
+        "Jupiter": {4: "Exalted", 9: "Own Sign", 12: "Own Sign", 10: "Debilitated"},
+        "Venus": {12: "Exalted", 2: "Own Sign", 7: "Own Sign", 6: "Debilitated"},
+        "Saturn": {7: "Exalted", 10: "Own Sign", 11: "Moolatrikona", 1: "Debilitated"},
+        "Rahu": {3: "Exalted", 2: "Exalted", 9: "Debilitated"},
+        "Ketu": {9: "Exalted", 8: "Exalted", 3: "Debilitated"}
+    };
+
+    // 2026 Sidereal (Lahiri) Transit Lookup Table for Slow Planets
+    const transitTable2026 = {
+        "Jupiter": [
+            { date: new Date("2026-06-02"), sign: 4 }, // Cancer
+            { date: new Date("2026-10-31"), sign: 5 }  // Leo
+        ],
+        "Rahu": [
+            { date: new Date("2026-12-05"), sign: 10 } // Capricorn
+        ],
+        "Ketu": [
+            { date: new Date("2026-12-05"), sign: 4 }  // Cancer
+        ],
+        "Saturn": [] // Remains in Pisces (12) all 2026
+    };
+
+    const formatDegrees = (deg) => {
+        const d = Math.floor(deg);
+        const m = Math.floor((deg - d) * 60);
+        return `${d}° ${m}'`;
+    };
+
+    const calculateStay = (name, p) => {
+        const now = new Date();
+        const degRemaining = 30 - p.normDegree;
+
+        // Mathematical approximations for fast planets
+        if (name === "Moon") {
+            const days = degRemaining / 13.18; // Avg speed
+            return days < 1 ? `${Math.round(days * 24)}h left` : `${Math.round(days)}d left`;
+        }
+        if (name === "Sun") {
+            return `${Math.round(degRemaining)}d left`;
+        }
+        if (name === "Mercury" || name === "Venus" || name === "Mars") {
+            const avgSpeeds = { "Mercury": 1.4, "Venus": 1.2, "Mars": 0.5 };
+            const days = degRemaining / (avgSpeeds[name] || 1);
+            return `~${Math.round(days)}d left`;
+        }
+
+        // Lookup table for slow planets
+        if (transitTable2026[name]) {
+            const nextTransit = transitTable2026[name].find(t => t.date > now);
+            if (nextTransit) {
+                const diffTime = Math.abs(nextTransit.date - now);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                return `${diffDays}d left`;
+            } else {
+                if (name === "Saturn") return "Stays all year";
+                return "Moving soon";
+            }
+        }
+        return "--";
+    };
+
+    const updatePlanet = (apiName, idPrefix) => {
+        const p = currentPlanetData[apiName];
+        if (p) {
+            const signNum = p.current_sign;
+            const signName = signs[signNum];
+            const degStr = formatDegrees(p.normDegree);
+            const retro = p.isRetro === "true" ? ' <span style="color: #ff4d4d;">(R)</span>' : '';
+            const stayText = calculateStay(apiName, p);
+            const status = (statuses[apiName] && statuses[apiName][signNum]) 
+                ? `<span style="color: var(--primary-light); font-size: 0.8rem; display: block; margin-top: 4px;">${statuses[apiName][signNum]}</span>` 
+                : "";
+            
+            const el = document.getElementById(`transit-${idPrefix}`);
+            if (el) {
+                el.innerHTML = `
+                    <div style="font-size: 1.1rem; color: var(--text-light);">${signName}</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">${degStr}${retro}</div>
+                    <div style="font-size: 0.75rem; color: var(--primary); opacity: 0.8; margin-top: 4px; font-weight: 600;">${stayText}</div>
+                    ${status}
+                `;
+            }
+        }
+    };
+
+    const grahas = ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn", "Rahu", "Ketu"];
+    grahas.forEach(g => updatePlanet(g, g.toLowerCase()));
+}
+
+function setupChartSelector() {
+    const selector = document.getElementById('rashi-selector');
+    if (!selector) return;
+
+    selector.addEventListener('change', (e) => {
+        updateKundli(parseInt(e.target.value));
+    });
+}
+
+function updateKundli(lagnaRashi) {
+    if (!currentPlanetData) return;
+
+    // Clear all houses
+    for (let i = 1; i <= 12; i++) {
+        const h = document.getElementById(`house-${i}`);
+        if (h) h.innerHTML = "";
+    }
+
+    const planetSymbols = {
+        "Sun": "Su", "Moon": "Mo", "Mars": "Ma", "Mercury": "Me",
+        "Jupiter": "Ju", "Venus": "Ve", "Saturn": "Sa", "Rahu": "Ra", "Ketu": "Ke"
+    };
+
+    // For each house, determine which rashi it is
+    // House 1 is lagnaRashi, House 2 is lagnaRashi + 1, etc.
+    for (let hNum = 1; hNum <= 12; hNum++) {
+        const houseRashi = ((lagnaRashi + hNum - 2) % 12) + 1;
+        const houseEl = document.getElementById(`house-${hNum}`);
+        
+        // Add Rashi Number to House
+        const rashiLabel = document.createElement('div');
+        rashiLabel.style.fontSize = "0.7rem";
+        rashiLabel.style.color = "var(--primary)";
+        rashiLabel.style.marginBottom = "2px";
+        rashiLabel.innerText = houseRashi;
+        houseEl.appendChild(rashiLabel);
+
+        // Find planets in this rashi
+        const planetList = [];
+        for (const [pName, pData] of Object.entries(currentPlanetData)) {
+            if (planetSymbols[pName] && pData.current_sign === houseRashi) {
+                planetList.push(planetSymbols[pName]);
+            }
+        }
+
+        if (planetList.length > 0) {
+            const pLabel = document.createElement('div');
+            pLabel.style.fontSize = "0.85rem";
+            pLabel.style.color = "var(--text-light)";
+            pLabel.innerText = planetList.join(" ");
+            houseEl.appendChild(pLabel);
+        }
+    }
+}
+
 // ---- Initialize Everything ----
 document.addEventListener('DOMContentLoaded', () => {
     initStars();
@@ -313,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPosts();
     renderSinglePost();
     initChatFab();
+    fetchNavagrahaTransits();
 
-    // Delay scroll reveal so cards render first
     setTimeout(initScrollReveal, 100);
 });
