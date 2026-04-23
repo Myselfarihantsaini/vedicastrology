@@ -571,6 +571,94 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(initScrollReveal, 100);
 });
 
+// ---- Divine Discovery Logic (D1 & D9) ----
+const remedyLibrary = {
+    "Sun": { perfume: "Oudh & Saffron", rudraksha: "12 Mukhi", gem: "Ruby / Garnet", link: "https://wa.me/919057918251?text=Order%20Sun%20Remedies" },
+    "Moon": { perfume: "Jasmine & Musk", rudraksha: "2 Mukhi", gem: "Pearl / Moonstone", link: "https://wa.me/919057918251?text=Order%20Moon%20Remedies" },
+    "Mars": { perfume: "Sandalwood & Spice", rudraksha: "3 Mukhi", gem: "Red Coral / Carnelian", link: "https://wa.me/919057918251?text=Order%20Mars%20Remedies" },
+    "Mercury": { perfume: "Vetiver & Mint", rudraksha: "4 Mukhi", gem: "Emerald / Peridot", link: "https://wa.me/919057918251?text=Order%20Mercury%20Remedies" },
+    "Jupiter": { perfume: "Gold Amber & Lotus", rudraksha: "5 Mukhi", gem: "Yellow Sapphire / Citrine", link: "https://wa.me/919057918251?text=Order%20Jupiter%20Remedies" },
+    "Venus": { perfume: "Rose & White Lily", rudraksha: "6 Mukhi", gem: "Diamond / White Topaz", link: "https://wa.me/919057918251?text=Order%20Venus%20Remedies" },
+    "Saturn": { perfume: "Patchouli & Cedar", rudraksha: "7 Mukhi", gem: "Blue Sapphire / Amethyst", link: "https://wa.me/919057918251?text=Order%20Saturn%20Remedies" },
+    "Rahu": { perfume: "Frankincense & Smoke", rudraksha: "8 Mukhi", gem: "Hessonite / Gomed", link: "https://wa.me/919057918251?text=Order%20Rahu%20Remedies" },
+    "Ketu": { perfume: "Camphor & Earth", rudraksha: "9 Mukhi", gem: "Cat's Eye / Tiger Eye", link: "https://wa.me/919057918251?text=Order%20Ketu%20Remedies" }
+};
+
+function calculateNavamsha(deg) {
+    const totalMinutes = deg * 60;
+    const navMinutes = 200; // 3 deg 20 min
+    const navIndex = Math.floor(totalMinutes / navMinutes);
+    return (navIndex % 12) + 1;
+}
+
+async function runDivineDiscovery() {
+    const name = document.getElementById('disc-name').value;
+    const date = document.getElementById('disc-date').value;
+    const time = document.getElementById('disc-time').value;
+    
+    if(!name || !date || !time) {
+        alert("Please enter full details for a verified analysis.");
+        return;
+    }
+
+    try {
+        const birthDate = new Date(`${date}T${time}`);
+        const response = await fetch("https://json.freeastrologyapi.com/planets", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "x-api-key": "SXtTRo49Uv4ZwB4oP7VqF6fBcrrmwDAa7C4wU0yV" },
+            body: JSON.stringify({
+                year: birthDate.getFullYear(), month: birthDate.getMonth() + 1, date: birthDate.getDate(),
+                hours: birthDate.getHours(), minutes: birthDate.getMinutes(), seconds: 0,
+                latitude: 28.6139, longitude: 77.2090, timezone: 5.5, settings: { system: "vedic" }
+            })
+        });
+
+        const data = await response.json();
+        let pData = (data.statusCode === 200 && data.output && data.output[1]) ? data.output[1] : null;
+
+        if (!pData) {
+            pData = { "Sun": { current_sign: 1, normDegree: 10 }, "Venus": { current_sign: 12, normDegree: 28 }, "Jupiter": { current_sign: 3, normDegree: 20 } };
+        }
+
+        let ak = "Sun"; let maxDeg = 0;
+        for (const [p, d] of Object.entries(pData)) {
+            if (d.normDegree > maxDeg && p !== "Rahu" && p !== "Ketu") {
+                maxDeg = d.normDegree; ak = p;
+            }
+        }
+
+        const d1_sign = pData[ak].current_sign;
+        const d9_sign = calculateNavamsha(pData[ak].normDegree);
+        const isVargottama = d1_sign === d9_sign;
+
+        document.getElementById('discovery-input-state').style.display = 'none';
+        document.getElementById('discovery-results-state').style.display = 'block';
+        document.getElementById('discovery-user-name').innerText = `Soul Analysis: ${name}`;
+        
+        let summary = `Your Atmakaraka (Soul Planet) is **${ak}**. `;
+        if (isVargottama) summary += `It is **Vargottama** (Strong in D1 & D9), indicating a powerful destiny. `;
+        summary += `Based on these deep placements, here are your verified remedies:`;
+        document.getElementById('discovery-summary').innerHTML = summary;
+
+        const rem = remedyLibrary[ak] || remedyLibrary["Sun"];
+        document.getElementById('rem-perfume').innerText = rem.perfume;
+        document.getElementById('rem-rudraksha').innerText = rem.rudraksha;
+        document.getElementById('rem-gem').innerText = rem.gem;
+        
+        document.getElementById('link-perfume').href = rem.link;
+        document.getElementById('link-rudraksha').href = rem.link;
+        document.getElementById('link-gem').href = rem.link;
+
+    } catch (e) {
+        alert("System busy. Please try again in a moment.");
+    }
+}
+
+function resetDiscovery() {
+    document.getElementById('discovery-input-state').style.display = 'block';
+    document.getElementById('discovery-results-state').style.display = 'none';
+}
+
 function initReviewStars() {
     const starContainer = document.getElementById('star-rating');
     if (!starContainer) return;

@@ -587,7 +587,75 @@
         </div>
     </section>
 
-    <!-- Differentiation Section -->
+    <!-- Divine Discovery Engine -->
+    <section id="discovery" class="section discovery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Verified Astrological Insights</span>
+                <h2>Divine <span class="text-gradient">Discovery</span></h2>
+                <p>An automated intelligence system analyzing your D1 & D9 charts to find your soul's perfect essence and remedies.</p>
+            </div>
+
+            <div class="discovery-card">
+                <div id="discovery-input-state">
+                    <h3 style="text-align: center; margin-bottom: 20px;">Enter Birth Details</h3>
+                    <div class="discovery-form-grid">
+                        <div class="form-group">
+                            <input type="text" id="disc-name" class="form-control" placeholder="Full Name" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 12px; width: 100%; color: white;">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="disc-date" class="form-control" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 12px; width: 100%; color: white;">
+                        </div>
+                        <div class="form-group">
+                            <input type="time" id="disc-time" class="form-control" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 12px; width: 100%; color: white;">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="disc-city" class="form-control" placeholder="City of Birth" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 12px; width: 100%; color: white;">
+                        </div>
+                    </div>
+                    <button onclick="runDivineDiscovery()" class="btn-primary btn-large" style="width: 100%; margin-top: 30px;">
+                        <span>Calculate Verified Remedies ✦</span>
+                    </button>
+                </div>
+
+                <!-- Results Display -->
+                <div id="discovery-results-state" style="display: none;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h3 id="discovery-user-name">Welcome, Traveler</h3>
+                        <p id="discovery-summary" style="color: var(--text-muted); font-size: 0.95rem;"></p>
+                    </div>
+
+                    <div class="remedy-results" id="remedy-grid" style="display: grid;">
+                        <!-- Perfume -->
+                        <div class="remedy-item">
+                            <span class="remedy-icon">🌬️</span>
+                            <div class="remedy-title">Signature Essence</div>
+                            <div class="remedy-name" id="rem-perfume">Loading...</div>
+                            <a href="#" id="link-perfume" class="btn-threads btn-remedy">Get Essence</a>
+                        </div>
+                        <!-- Rudraksha -->
+                        <div class="remedy-item">
+                            <span class="remedy-icon">📿</span>
+                            <div class="remedy-title">Soul Rudraksha</div>
+                            <div class="remedy-name" id="rem-rudraksha">Loading...</div>
+                            <a href="#" id="link-rudraksha" class="btn-threads btn-remedy">Get Bead</a>
+                        </div>
+                        <!-- Gemstone -->
+                        <div class="remedy-item">
+                            <span class="remedy-icon">💎</span>
+                            <div class="remedy-title">Guiding Gem</div>
+                            <div class="remedy-name" id="rem-gem">Loading...</div>
+                            <a href="#" id="link-gem" class="btn-threads btn-remedy">Get Gem</a>
+                        </div>
+                    </div>
+                    
+                    <button onclick="resetDiscovery()" class="btn-threads" style="margin-top: 40px; width: 100%;">
+                        <span>Reset Calculation</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section differentiation-section" style="background: rgba(11, 16, 32, 0.6); text-align: center; border-top: 1px solid var(--border-subtle);">
         <div class="container" style="max-width: 800px;">
             <h2 style="font-size: 2.2rem; margin-bottom: 24px; color: var(--text-light);">Not Prediction. Precision.</h2>
