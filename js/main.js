@@ -462,6 +462,10 @@ function setupChartSelector() {
     const selector = document.getElementById('rashi-selector');
     if (!selector) return;
 
+    // Initialize with current selector value (or default to Aries if empty)
+    const initialValue = selector.value || "1";
+    updateKundli(parseInt(initialValue));
+
     selector.addEventListener('change', (e) => {
         updateKundli(parseInt(e.target.value));
     });
