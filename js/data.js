@@ -9,6 +9,105 @@
 
 const postsData = [
     {
+        id: "venus-in-houses-relationship-style",
+        title: "Venus in Houses: Relationship Style, Sign Expression & Present Transit Effects",
+        date: "April 24, 2026",
+        excerpt: "In astrology, Venus governs attraction, bonding style, pleasure, values, and emotional equilibrium. The house shows where relationships unfold, the sign shows the behavioral tone of love, and current Venus transits act as triggers.",
+        content: `
+            <p>In astrology, Venus governs attraction, bonding style, pleasure, values, and emotional equilibrium. The house shows where relationships unfold, the sign shows the behavioral tone of love, and current Venus transits act as triggers that activate, amplify, or expose patterns. Read all three together for accuracy.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 1st House — attraction is embodied</h3>
+            <p>You project Venus through the body, tone, and first impression. Relationships begin with response to you—your aesthetics, softness, or social ease. Strength gives magnetism and diplomacy; weakness leans toward people-pleasing or identity tied to approval.</p>
+            <p><strong>Present transit effect:</strong> When Venus activates the 1st, visibility and desirability rise; new interactions start easily, but boundaries must stay intact.</p>
+            <p><strong>Sign expression:</strong> Aries—direct, fast attraction; Taurus—sensual, steady appeal; Gemini—playful, talkative charm; Cancer—nurturing, receptive pull; Leo—radiant, attention-drawing; Virgo—refined, modest elegance; Libra—balanced, socially magnetic; Scorpio—intense, penetrating allure; Sagittarius—open, upbeat warmth; Capricorn—controlled, classic grace; Aquarius—distinct, unconventional appeal; Pisces—soft, dreamy magnetism.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 2nd House — love as value and security</h3>
+            <p>Affection is expressed through provision, taste, and consistency. You equate love with reliability and tangible care; attachment builds slowly and prefers continuity. Imbalance shows as over-attachment to comfort or material proof of love.</p>
+            <p><strong>Present transit effect:</strong> Heightens desire for good food, luxury, and financial stability; supports gains if disciplined, excess if not.</p>
+            <p><strong>Sign expression:</strong> Aries—impulsive spending in love; Taurus—wealth building and loyalty; Gemini—value through words and variety; Cancer—security via emotional bonding; Leo—generous gifting; Virgo—practical, careful spending; Libra—balanced sharing; Scorpio—possessive value control; Sagittarius—expansive, risk-taking; Capricorn—structured, long-term saving; Aquarius—detached, unconventional values; Pisces—compassionate giving.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 3rd House — love through interaction</h3>
+            <p>Connection depends on communication, curiosity, and daily exchange. You bond via humor, messaging, and shared mental rhythm; attraction grows through familiarity. Risk lies in staying at surface level or scattering attention.</p>
+            <p><strong>Present transit effect:</strong> Increases social traffic, flirting, short trips, and digital interaction; many contacts, selective depth needed.</p>
+            <p><strong>Sign expression:</strong> Aries—bold, teasing speech; Taurus—steady, calm tone; Gemini—quick, witty exchange; Cancer—feeling-led communication; Leo—expressive storytelling; Virgo—precise, analytical talk; Libra—harmonizing dialogue; Scorpio—probing, intense messaging; Sagittarius—blunt, truth-focused; Capricorn—measured, strategic speech; Aquarius—original, idea-driven; Pisces—intuitive, poetic.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 4th House — love as inner security</h3>
+            <p>You require emotional safety, privacy, and a stable base. Affection shows through care, home-making, and protection. Disturbance in relationships directly unsettles the inner state.</p>
+            <p><strong>Present transit effect:</strong> Supports reconciliation, home comfort, and emotional healing; can increase sensitivity and retreat.</p>
+            <p><strong>Sign expression:</strong> Aries—protective, reactive care; Taurus—consistent, soothing comfort; Gemini—talking feelings through; Cancer—deeply attached nurturing; Leo—warm, expressive care; Virgo—service-based nurturing; Libra—peace-seeking home; Scorpio—intense emotional bonding; Sagittarius—needs space within home; Capricorn—controlled, duty-based care; Aquarius—detached but supportive; Pisces—absorbing, compassionate.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 5th House — love as creation and romance</h3>
+            <p>This is expressive Venus: attraction, creativity, and pleasure are central. You pursue experiences that feel alive; love is performed, celebrated, and noticed. Risk lies in idealization or seeking validation through admiration.</p>
+            <p><strong>Present transit effect:</strong> Strong window for dating, creativity, speculation; passion rises, but durability must be assessed.</p>
+            <p><strong>Sign expression:</strong> Aries—bold pursuit; Taurus—sensual, slow romance; Gemini—playful, flirtatious; Cancer—sentimental, protective; Leo—dramatic, grand gestures; Virgo—careful, selective affection; Libra—balanced romance; Scorpio—intense, consuming; Sagittarius—adventurous, spontaneous; Capricorn—reserved, controlled; Aquarius—unconventional, experimental; Pisces—idealistic, poetic.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 6th House — love as duty and refinement</h3>
+            <p>Affection is shown through help, routine, and problem-solving. Relationships are tested in daily life; improvement is constant. Risk is over-service, criticism, or unequal effort.</p>
+            <p><strong>Present transit effect:</strong> Exposes imbalances; good for repair, boundaries, and healthier routines; friction if avoided.</p>
+            <p><strong>Sign expression:</strong> Aries—assertive, confrontational help; Taurus—reliable, consistent service; Gemini—analytical fixing; Cancer—emotionally caregiving; Leo—proud, visible effort; Virgo—perfectionist service; Libra—fairness-driven duty; Scorpio—intense, corrective focus; Sagittarius—inconsistent support; Capricorn—disciplined, structured help; Aquarius—detached assistance; Pisces—self-sacrificing care.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 7th House — love as mirroring and balance</h3>
+            <p>Partnership is central; you seek reciprocity, fairness, and visible commitment. The partner reflects your Venus patterns. Risk is over-reliance on relationship for identity.</p>
+            <p><strong>Present transit effect:</strong> Activates unions—meetings, agreements, proposals, or recalibration; attracts attention from others.</p>
+            <p><strong>Sign expression:</strong> Aries—needs autonomy in union; Taurus—loyal, steady pairing; Gemini—communicative partnership; Cancer—bonded, protective; Leo—expressive, proud union; Virgo—practical, service-oriented; Libra—harmonious equality; Scorpio—intense, exclusive bond; Sagittarius—freedom within partnership; Capricorn—serious, long-term; Aquarius—independent, unconventional; Pisces—merging, compassionate.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 8th House — love as depth and transformation</h3>
+            <p>You seek total involvement—trust, intimacy, and emotional truth. Bonds can be magnetic and life-altering. Risk includes control, secrecy, or volatility.</p>
+            <p><strong>Present transit effect:</strong> Brings buried emotions up; intensifies attraction, intimacy, and shared resources themes; requires honesty.</p>
+            <p><strong>Sign expression:</strong> Aries—impulsive intensity; Taurus—possessive, enduring depth; Gemini—curious, probing intimacy; Cancer—emotionally merging; Leo—dramatic, proud intensity; Virgo—contained, controlled depth; Libra—negotiated intimacy; Scorpio—extreme passion; Sagittarius—explorative intimacy; Capricorn—suppressed, strategic depth; Aquarius—detached intensity; Pisces—spiritual, dissolving bond.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 9th House — love as expansion and meaning</h3>
+            <p>You connect through belief, learning, travel, and perspective. Relationships must grow your worldview. Risk is restlessness or prioritizing experience over stability.</p>
+            <p><strong>Present transit effect:</strong> Opens opportunities through travel, education, or new circles; encourages exploration over fixation.</p>
+            <p><strong>Sign expression:</strong> Aries—adventurous, bold seeking; Taurus—steady, value-based growth; Gemini—intellectual exploration; Cancer—belief-based emotional bond; Leo—expressive, inspirational love; Virgo—practical philosophy; Libra—balanced ideals; Scorpio—intense convictions; Sagittarius—free, expansive love; Capricorn—structured growth; Aquarius—unconventional views; Pisces—spiritual union.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 10th House — love meets ambition and visibility</h3>
+            <p>Relationships intersect with career, status, and public perception. You value respect, achievement, and alignment with life direction. Risk is prioritizing image over intimacy.</p>
+            <p><strong>Present transit effect:</strong> Raises visibility and desirability in public/professional spaces; connections may form through work.</p>
+            <p><strong>Sign expression:</strong> Aries—driven, competitive attraction; Taurus—stable, reputable bond; Gemini—networked, communicative; Cancer—emotion tied to status; Leo—high-profile expression; Virgo—practical image; Libra—socially balanced presence; Scorpio—power dynamics; Sagittarius—expansive goals; Capricorn—disciplined ambition; Aquarius—nontraditional status; Pisces—idealized public image.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 11th House — love through networks and goals</h3>
+            <p>Connection grows from friendship, shared aims, and community. You value alignment of vision more than intensity alone. Risk is confusing popularity with intimacy.</p>
+            <p><strong>Present transit effect:</strong> Expands circles, collaborations, and opportunities; romantic prospects via friends or groups.</p>
+            <p><strong>Sign expression:</strong> Aries—dynamic, initiating networks; Taurus—steady, loyal circles; Gemini—social, communicative groups; Cancer—emotionally bonded networks; Leo—central, visible role; Virgo—selective, curated circles; Libra—harmonized friendships; Scorpio—intense, tight bonds; Sagittarius—wide, diverse networks; Capricorn—structured groups; Aquarius—collective, progressive focus; Pisces—fluid, porous connections.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Venus in 12th House — love as privacy, healing, and release</h3>
+            <p>Affection is inward, subtle, and often unspoken. You may love quietly or in complex circumstances; compassion is high. Risk includes secrecy, escapism, or self-sacrifice.</p>
+            <p><strong>Present transit effect:</strong> Favors closure, forgiveness, rest, and healing; brings hidden feelings to awareness; not always overtly romantic.</p>
+            <p><strong>Sign expression:</strong> Aries—hidden but urgent desire; Taurus—private, steady attachment; Gemini—unspoken thoughts; Cancer—deeply concealed emotions; Leo—suppressed pride in love; Virgo—controlled, restrained feeling; Libra—quiet harmony; Scorpio—secret intensity; Sagittarius—private freedom needs; Capricorn—reserved, guarded love; Aquarius—detached secrecy; Pisces—complete emotional dissolution.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <p>Interpret Venus through house (context), sign (behavior), and transit (timing). A well-supported Venus yields attraction with stability and satisfaction. A strained Venus yields desire without grounding, repeating patterns until balance—between pleasure, boundaries, and self-worth—is established.</p>
+        `,
+        image: "https://images.unsplash.com/photo-1518199266791-bd3732d2465a?auto=format&fit=crop&q=80&w=1200",
+        category: "Relationship Astrology"
+    },
+    {
         id: "venus-and-health-framework",
         title: "Venus & Health — Physiological, Astrological, and Transit Framework",
         date: "April 23, 2026",
