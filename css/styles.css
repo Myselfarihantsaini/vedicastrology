@@ -190,7 +190,7 @@ h5 {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     font-family: var(--font-serif);
     font-size: 1.6rem;
     font-weight: 700;
@@ -198,7 +198,7 @@ h5 {
 }
 
 .logo img {
-    height: 36px;
+    height: 28px;
     width: auto;
     display: block;
     transition: var(--transition);
@@ -206,11 +206,11 @@ h5 {
 }
 
 .logo:hover img {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1);
 }
 
 .footer-logo img {
-    height: 48px;
+    height: 36px;
     margin-bottom: 0;
 }
 
