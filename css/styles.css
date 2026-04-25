@@ -190,24 +190,32 @@ h5 {
 .logo {
     display: flex;
     align-items: center;
+    gap: 12px;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-light);
 }
 
 .logo img {
-    height: 50px;
+    height: 36px;
     width: auto;
     display: block;
     transition: var(--transition);
-    filter: drop-shadow(0 0 8px rgba(198, 161, 91, 0.2));
+    filter: drop-shadow(0 0 5px rgba(198, 161, 91, 0.3));
 }
 
 .logo:hover img {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 12px rgba(198, 161, 91, 0.4));
+    transform: scale(1.1) rotate(5deg);
 }
 
 .footer-logo img {
-    height: 70px;
-    margin-bottom: 10px;
+    height: 48px;
+    margin-bottom: 0;
+}
+
+.logo-accent {
+    color: var(--primary);
 }
 
 @keyframes pulse {
