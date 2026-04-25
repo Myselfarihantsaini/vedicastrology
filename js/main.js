@@ -278,6 +278,7 @@ function initializePostActions(container, post) {
     if (!container || !post) return;
 
     const likeBtn = container.querySelector('.like-btn');
+    const commentBtn = container.querySelector('.comment-btn');
     const shareBtn = container.querySelector('.share-btn');
     
     // Generate a unique, consistent "starting" like count based on post ID
@@ -328,6 +329,16 @@ function initializePostActions(container, post) {
         });
         shareBtn.dataset.initialized = 'true';
     }
+
+    if (commentBtn && commentBtn.dataset.initialized !== 'true') {
+        commentBtn.addEventListener('click', () => {
+            const commentsSection = document.getElementById('discussion-anchor');
+            if (commentsSection) {
+                commentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+        commentBtn.dataset.initialized = 'true';
+    }
 }
 
 // ---- Render Single Post ----
@@ -357,13 +368,14 @@ function renderSinglePost() {
             <!-- AdSense Ad inside the blog post to maximize earnings -->
             <div data-post-ad style="margin: 40px 0; text-align: center;">
             </div>
-            <div class="post-actions" style="display: flex; gap: 15px; margin: 30px 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 0;">
+            <div class="post-actions" style="display: flex; gap: 12px; margin: 30px 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 0; flex-wrap: wrap;">
                 <button class="post-action-btn like-btn" type="button">♡ Like</button>
+                <button class="post-action-btn comment-btn" type="button">💬 Comment</button>
                 <button class="post-action-btn share-btn" type="button">🔗 Share</button>
             </div>
             
-            <div class="post-comments-section" style="margin-top: 40px; padding: 30px; background: rgba(18, 26, 46, 0.5); border-radius: 12px; border: 1px solid var(--border-subtle);">
-                <h3 style="margin-bottom: 20px; font-family: var(--font-serif); color: var(--primary);">Discussion</h3>
+            <div id="discussion-anchor" class="post-comments-section">
+                <h3>Discussion</h3>
                 <div data-post-comments></div>
             </div>
 
