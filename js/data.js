@@ -12,16 +12,16 @@ const postsData = [
         id: "venus-in-8th-house-love-intimacy-health-transit",
         title: "Venus in the 8th House — Love, Intimacy, Aspects, Health & Transit Effects",
         date: "April 27, 2026",
-        excerpt: "Venus in the 8th house brings love into emotional depth, intimacy, trust, shared resources, hidden health patterns, and transformative relationship experiences.",
+        excerpt: "In astrology, Venus in the 8th house operates far below the surface. It does not express love in a simple or linear way.",
         content: `
             <p>In astrology, Venus in the 8th house operates far below the surface. It does not express love in a simple or linear way. Instead, it pulls the native into intense emotional bonds, psychological depth, and transformative relationship experiences.</p>
-            <p>The 8th house governs intimacy, vulnerability, shared resources, secrecy, and hidden processes — both emotional and physical. When Venus is placed here, love becomes a space where attraction, trust, control, and healing are constantly tested and refined.</p>
+            <p>The 8th house governs intimacy, vulnerability, shared resources, secrecy, and hidden processes—both emotional and physical. When Venus is placed here, love becomes a space where attraction, trust, control, and healing are constantly tested and refined.</p>
 
             <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
 
             <h3>Core Relationship Nature — Depth Over Simplicity</h3>
             <p>Venus in the 8th house does not seek casual connection. It seeks complete involvement. The native is drawn toward relationships that feel emotionally powerful, sometimes overwhelming, and often life-changing.</p>
-            <p>Attraction tends to be magnetic. People enter the native's life with intensity, and once bonds are formed, they rarely remain superficial. There is a strong desire for loyalty, exclusivity, and emotional truth.</p>
+            <p>Attraction tends to be magnetic. People enter the native’s life with intensity, and once bonds are formed, they rarely remain superficial. There is a strong desire for loyalty, exclusivity, and emotional truth.</p>
             <p>However, this same intensity can create complications. Relationships may involve emotional highs and lows, fear of betrayal, or power struggles. The native may struggle between wanting to merge completely and wanting to protect themselves from vulnerability.</p>
             <p>This placement ultimately teaches that true intimacy requires trust, not control.</p>
 
@@ -29,40 +29,40 @@ const postsData = [
 
             <h3>Venus Aspects from the 8th House (Vedic Perspective)</h3>
             <p>From the 8th house, Venus casts its primary aspect on the 2nd house, directly influencing values, speech, family patterns, and stored wealth.</p>
-            <p><strong>Impact on the 2nd house:</strong> Venus from the 8th brings emotional depth into speech and family dynamics. The native may speak with emotional intensity or sensitivity. Family relationships may involve hidden patterns, unspoken emotions, or financial complexities. Wealth may come through shared resources, inheritance, or partnerships rather than purely self-earned means.</p>
+            <p>Impact on the 2nd house:<br>Venus from the 8th brings emotional depth into speech and family dynamics. The native may speak with emotional intensity or sensitivity. Family relationships may involve hidden patterns, unspoken emotions, or financial complexities. Wealth may come through shared resources, inheritance, or partnerships rather than purely self-earned means.</p>
             <p>There is often a link between emotional state and financial stability, meaning internal imbalance can reflect in material life.</p>
 
             <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
 
             <h3>Intimacy and Emotional Magnetism</h3>
-            <p>This placement creates strong sexual and emotional attraction. The native does not connect lightly — they seek depth, vulnerability, and psychological bonding.</p>
+            <p>This placement creates strong sexual and emotional attraction. The native does not connect lightly—they seek depth, vulnerability, and psychological bonding.</p>
             <p>Physical connection is often tied to emotional intensity. Attraction may feel consuming, making it difficult to separate desire from emotional attachment.</p>
             <p>This can create powerful bonding, but also the tendency to stay in relationships that are intense rather than healthy. The key is learning the difference between emotional depth and emotional dependency.</p>
 
             <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
 
             <h3>Health Impact — Hidden and Emotional Link</h3>
-            <p>Venus in the 8th house influences health in a subtle but important way. It governs internal systems such as reproductive health, hormonal balance, sexual vitality, kidneys, and fluid balance.</p>
-            <p>Health issues here are rarely immediate. They tend to develop gradually, remain hidden initially, and be triggered by emotional stress.</p>
+            <p>Venus in the 8th house influences health in a subtle but important way. It governs internal systems such as:<br>– reproductive health<br>– hormonal balance<br>– sexual vitality<br>– kidneys and fluid balance</p>
+            <p>Health issues here are rarely immediate. They tend to:<br>– develop gradually<br>– remain hidden initially<br>– be triggered by emotional stress</p>
             <p>Emotional experiences, especially related to relationships, directly affect physical health. Suppressed feelings, attachment stress, or emotional instability can manifest as hormonal imbalance, fatigue, or reproductive issues.</p>
             <p>At a higher level, this placement gives strong regenerative ability, allowing recovery once balance is restored.</p>
-            <p>At a lower level, it can lead to chronic or hidden conditions, delayed diagnosis, and psychosomatic symptoms.</p>
-            <p>The core pattern is clear: unprocessed emotions often become physical imbalance.</p>
+            <p>At a lower level, it can lead to:<br>– chronic or hidden conditions<br>– delayed diagnosis<br>– psychosomatic symptoms</p>
+            <p>The core pattern is clear:<br>unprocessed emotions often become physical imbalance.</p>
 
             <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
 
             <h3>Present Venus Transit Effect in the 8th House</h3>
-            <p>When Venus transits the 8th house, it activates hidden emotional and physical layers. This is not a light transit — it is revealing and transformative.</p>
-            <p><strong>Emotionally, this period brings:</strong> resurfacing of past relationship patterns, deeper attraction and bonding, exposure of hidden feelings, and intensified emotional responses.</p>
+            <p>When Venus transits the 8th house, it activates hidden emotional and physical layers. This is not a light transit—it is revealing and transformative.</p>
+            <p>Emotionally, this period brings:<br>– resurfacing of past relationship patterns<br>– deeper attraction and bonding<br>– exposure of hidden feelings<br>– intensified emotional responses</p>
             <p>Relationships may either deepen significantly or face underlying truths that can no longer be ignored.</p>
-            <p><strong>Physically, the body may respond through:</strong> hormonal fluctuations, reproductive sensitivity, fatigue or low energy, and awareness of neglected health issues.</p>
-            <p>This transit is best used for emotional healing, addressing trust issues, improving intimacy, and recognizing hidden health patterns.</p>
+            <p>Physically, the body may respond through:<br>– hormonal fluctuations<br>– reproductive sensitivity<br>– fatigue or low energy<br>– awareness of neglected health issues</p>
+            <p>This transit is best used for:<br>– emotional healing<br>– addressing trust issues<br>– improving intimacy<br>– recognizing hidden health patterns</p>
             <p>It is not ideal for impulsive decisions in relationships, as emotions may be heightened and clarity may take time to develop.</p>
 
             <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
 
             <h3>Sign-wise Expression of Venus in the 8th House (Detailed Interpretation)</h3>
-            <p>When Venus is placed in the 8th house, the sign it occupies becomes the style through which intensity, intimacy, and transformation are experienced. The house already brings depth and emotional complexity, so the sign determines how that depth is handled, expressed, or resisted.</p>
+            <p>When Venus is placed in the 8th house, the sign it occupies becomes the style through which intensity, intimacy, and transformation are experienced. The house already brings depth and emotional complexity—so the sign determines how that depth is handled, expressed, or resisted.</p>
 
             <h3>Aries — intensity through impulse and reaction</h3>
             <p>Venus in Aries in the 8th house creates a fast-moving emotional pattern. Attraction happens quickly and intensely, often before emotional stability is established. The native feels strongly and reacts immediately, which can lead to passionate but volatile relationships. There is a tendency to act on desire without fully processing emotional consequences. Over time, the lesson becomes controlling impulsiveness and learning that depth requires patience, not just intensity.</p>
@@ -89,7 +89,7 @@ const postsData = [
             <p>This is one of the strongest placements for Venus in the 8th house. Love becomes transformative, consuming, and deeply emotional. The native experiences powerful attraction, strong bonding, and life-changing relationships. There is natural magnetism, but also the risk of control, jealousy, or emotional extremes. This placement has the capacity for deep healing and transformation when handled consciously. The lesson is to use intensity for growth rather than control.</p>
 
             <h3>Sagittarius — seeking depth while needing freedom</h3>
-            <p>Venus in Sagittarius in the 8th house creates a conflict between emotional depth and personal freedom. The native is drawn toward intense experiences but may resist emotional confinement. Relationships often bring growth, learning, and expansion, but may lack consistency if freedom is restricted. The lesson is to understand that depth does not have to limit freedom — it can expand it when approached consciously.</p>
+            <p>Venus in Sagittarius in the 8th house creates a conflict between emotional depth and personal freedom. The native is drawn toward intense experiences but may resist emotional confinement. Relationships often bring growth, learning, and expansion, but may lack consistency if freedom is restricted. The lesson is to understand that depth does not have to limit freedom—it can expand it when approached consciously.</p>
 
             <h3>Capricorn — controlled intensity and long-term bonding</h3>
             <p>This placement expresses emotional depth in a structured and controlled way. The native may not show vulnerability easily but forms strong, lasting bonds over time. Love is expressed through responsibility, loyalty, and commitment rather than emotional display. There may be a delay in emotional openness, but once trust is built, relationships become stable. The lesson is to allow emotional expression without over-controlling it.</p>
@@ -105,9 +105,9 @@ const postsData = [
             <h3>Final Understanding</h3>
             <p>Venus in the 8th house transforms love into a process of emotional and psychological evolution. It brings depth, intensity, and powerful bonding, but also challenges related to trust, control, and vulnerability.</p>
             <p>Its aspect to the 2nd house connects emotional life with values and stability, showing that internal balance directly affects external life.</p>
-            <p><strong>A strong Venus here gives:</strong> deep emotional strength, loyalty and transformative relationships, and the ability to heal and regenerate.</p>
-            <p><strong>An imbalanced Venus creates:</strong> emotional extremes, attachment and control issues, and hidden health imbalances.</p>
-            <p>The purpose of this placement is to learn how to experience deep connection without losing emotional stability, and how to transform through love without being consumed by it.</p>
+            <p>A strong Venus here gives:<br>– deep emotional strength<br>– loyalty and transformative relationships<br>– ability to heal and regenerate</p>
+            <p>An imbalanced Venus creates:<br>– emotional extremes<br>– attachment and control issues<br>– hidden health imbalances</p>
+            <p>The purpose of this placement is to learn:<br>how to experience deep connection without losing emotional stability, and how to transform through love without being consumed by it.</p>
         `,
         image: "assets/venus-8th-house.jpg",
         category: "Relationship Astrology"
