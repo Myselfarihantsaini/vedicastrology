@@ -240,20 +240,6 @@ function initializeAdSlot(container) {
     }
 }
 
-function initializeUtterances(container) {
-    if (!container || container.dataset.initialized === 'true') return;
-
-    const script = document.createElement('script');
-    script.src = 'https://utteranc.es/client.js';
-    script.async = true;
-    script.crossOrigin = 'anonymous';
-    script.setAttribute('repo', 'Myselfarihantsaini/Myselfarihantsaini.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    script.setAttribute('theme', 'github-dark');
-    container.appendChild(script);
-    container.dataset.initialized = 'true';
-}
-
 async function copyTextToClipboard(text) {
     if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(text);
@@ -272,6 +258,96 @@ async function copyTextToClipboard(text) {
     const copied = document.execCommand('copy');
     document.body.removeChild(fallbackInput);
     return copied;
+}
+
+function escapeHTML(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function getStoredPostComments(postId) {
+    try {
+        return JSON.parse(localStorage.getItem(`comments_${postId}`)) || [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function renderStoredPostComments(container, comments) {
+    if (!container) return;
+
+    if (!comments.length) {
+        container.innerHTML = '<p class="comment-empty">No comments yet.</p>';
+        return;
+    }
+
+    container.innerHTML = comments.map(comment => `
+        <article class="comment-card">
+            <div class="comment-card-header">
+                <strong>${escapeHTML(comment.name)}</strong>
+                <span>${escapeHTML(comment.date)}</span>
+            </div>
+            <p>${escapeHTML(comment.message).replace(/\n/g, '<br>')}</p>
+        </article>
+    `).join('');
+}
+
+function initializePostCommentForm(container, post) {
+    if (!container || !post || container.dataset.initialized === 'true') return;
+
+    const form = container.querySelector('[data-post-comment-form]');
+    const list = container.querySelector('[data-post-comment-list]');
+    const status = container.querySelector('[data-post-comment-status]');
+    const comments = getStoredPostComments(post.id);
+
+    renderStoredPostComments(list, comments);
+
+    if (!form) return;
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const formData = new FormData(form);
+        const name = String(formData.get('name') || '').trim();
+        const email = String(formData.get('email') || '').trim();
+        const message = String(formData.get('message') || '').trim();
+        const date = new Date().toLocaleDateString('en-IN', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+        });
+
+        const comment = { name, email, message, date };
+        const nextComments = [...comments, comment];
+        localStorage.setItem(`comments_${post.id}`, JSON.stringify(nextComments));
+        comments.push(comment);
+        renderStoredPostComments(list, comments);
+
+        const subject = `New comment on ${post.title}`;
+        const body = [
+            `Post: ${post.title}`,
+            `URL: ${window.location.href}`,
+            `Name: ${name}`,
+            `Email: ${email}`,
+            '',
+            'Comment:',
+            message
+        ].join('\n');
+
+        if (status) {
+            status.textContent = 'Comment saved here. Opening email to send it now.';
+        }
+
+        window.location.href = buildMailtoUrl('shambhavaa.reviews@gmail.com', subject, body);
+        form.reset();
+    });
+
+    container.dataset.initialized = 'true';
 }
 
 function initializePostActions(container, post) {
@@ -375,8 +451,25 @@ function renderSinglePost() {
             </div>
             
             <div id="discussion-anchor" class="post-comments-section">
-                <h3>Discussion</h3>
-                <div data-post-comments></div>
+                <h3>Comments</h3>
+                <form class="post-comment-form" data-post-comment-form>
+                    <div class="post-comment-grid">
+                        <label class="sr-only" for="post-comment-name">Your Name</label>
+                        <input type="text" id="post-comment-name" name="name" class="form-control" placeholder="Your Name" autocomplete="name" required>
+
+                        <label class="sr-only" for="post-comment-email">Your Email</label>
+                        <input type="email" id="post-comment-email" name="email" class="form-control" placeholder="Your Email" autocomplete="email" required>
+                    </div>
+
+                    <label class="sr-only" for="post-comment-message">Your Comment</label>
+                    <textarea id="post-comment-message" name="message" class="form-control" rows="5" placeholder="Write your comment..." required></textarea>
+
+                    <button type="submit" class="btn-primary post-comment-submit">
+                        <span>Send Comment</span>
+                    </button>
+                    <p class="post-comment-status" data-post-comment-status></p>
+                </form>
+                <div class="post-comment-list" data-post-comment-list></div>
             </div>
 
             <div class="post-footer" style="margin-top: 40px; text-align: center;">
@@ -385,7 +478,7 @@ function renderSinglePost() {
         `;
 
         initializeAdSlot(singlePostContainer.querySelector('[data-post-ad]'));
-        initializeUtterances(singlePostContainer.querySelector('[data-post-comments]'));
+        initializePostCommentForm(singlePostContainer.querySelector('.post-comments-section'), post);
         initializePostActions(singlePostContainer, post);
     } else {
         singlePostContainer.innerHTML = `
