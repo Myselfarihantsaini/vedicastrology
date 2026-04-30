@@ -425,7 +425,7 @@ function renderSinglePost() {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
 
-    const post = postsData.find(p => p.id === postId);
+    const post = postId ? postsData.find(p => p.id === postId) : postsData[0];
 
     if (post) {
         document.title = `${post.title} — Shambhava`;
