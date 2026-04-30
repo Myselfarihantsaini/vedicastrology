@@ -9,6 +9,113 @@
 
 const postsData = [
     {
+        id: "venus-in-10th-house-reputation-career-public-life",
+        title: "Venus in the 10th House — Reputation, Work, and Public Life",
+        date: "April 30, 2026",
+        excerpt: "Venus in the 10th house places attraction, harmony, and value into the most visible part of the chart, shaping career, reputation, and public image.",
+        content: `
+            <p>Venus in the 10th house places a planet of attraction, harmony, and value into the most visible part of the chart. The 10th governs profession, status, authority, public image, and the role the person plays in the world. When Venus occupies this house, it does not remain limited to relationships or private pleasure. It becomes part of how the person is seen, received, and evaluated in public life.</p>
+            <p>This is why Venus in the 10th is not mainly about popularity. It is about the need to be <strong>valued through one's visible contribution</strong>.</p>
+            <p>The native often develops a public presence that is socially acceptable, aesthetically aware, and diplomatically expressed. People may respond to them with ease. Their manner, tone, and presentation can smooth interactions that would otherwise become difficult. When supported, this creates professional success through relationships, taste, and refinement. When afflicted, it produces dependence on approval, image management, and decisions shaped by how things appear rather than what they are.</p>
+            <blockquote>reputation becomes inseparable from approval.</blockquote>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>What Venus in the 10th Does Psychologically</h3>
+            <p>The 10th house is where the person performs in the world. It is not a private space. It is a place of visibility, judgment, and consequence. Venus here often creates a person who understands, consciously or unconsciously, that success is not only about competence. It is also about how one is received.</p>
+            <p>This can produce refined qualities. The native may be socially intelligent, aware of tone, capable of negotiation, and able to maintain harmony in professional settings. They may instinctively know how to present themselves in a way that attracts support rather than resistance. But the shadow begins when approval becomes necessary.</p>
+            <p>Then patterns appear:<br>the person may adjust themselves too much to maintain image<br>they may avoid necessary conflict in professional life<br>they may choose what is liked over what is correct</p>
+            <p>So Venus in the 10th often asks the person to learn a difficult distinction:</p>
+            <blockquote>acceptance supports success, but dependence on acceptance weakens authority.</blockquote>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Authority, Career Path, and Public Role</h3>
+            <p>The 10th house is directly linked to authority, responsibility, and long-term direction. Venus here modifies authority through softness. The native may not dominate aggressively. Instead, they influence through cooperation, presentation, and relationship management.</p>
+            <p>When supported, this can produce success in fields connected to Venus and public life. The person may do well in art, design, fashion, media, diplomacy, counseling, hospitality, branding, public relations, law related to negotiation, or any profession where interaction and perception matter. Their career often benefits from social connections and the ability to create goodwill.</p>
+            <p>When afflicted, the same placement may produce instability. The native may prioritize comfort over discipline, image over structure, or relationships over responsibility. This can lead to inconsistent career direction or dependence on external validation.</p>
+            <p>So the professional truth of this placement is:</p>
+            <blockquote>success comes through how one is perceived, but must be sustained through what one actually does.</blockquote>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Relationship With Authority Figures</h3>
+            <p>Venus in the 10th often affects how the native relates to authority. They may prefer cooperative environments rather than rigid hierarchies. They respond better to fairness than force. In many cases, they form beneficial relationships with superiors or influential figures.</p>
+            <p>When supported, this creates mutual respect and professional growth through connection. When afflicted, it may produce favoritism, dependence, or difficulty asserting oneself in front of authority. The native may hesitate to challenge those in power, even when necessary.</p>
+            <p>So this placement often brings a subtle tension:</p>
+            <blockquote>the need to be liked can interfere with the need to stand firm.</blockquote>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>The 7th Aspect of Venus From the 10th — Public Life Shaping Private Life</h3>
+            <p>From the 10th house, Venus aspects the 4th house. The 4th governs home, emotional peace, and private life. This creates a direct link between public activity and inner stability.</p>
+            <p>The native's emotional life is often influenced by their professional state. When career is stable and relationships in the workplace are smooth, the person feels internally settled. When public life becomes tense, the private world is disturbed.</p>
+            <p>This can also produce a pattern where the person brings work into the home, or shapes their home environment according to their public image.</p>
+            <p>So one of the most important truths of this placement is:</p>
+            <blockquote>outer harmony often determines inner peace.</blockquote>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Health Dimension</h3>
+            <p>The 10th house is associated with activity, pressure, and sustained effort. Venus here can soften the impact of professional stress when well-placed, allowing the person to maintain balance through comfort and relational support.</p>
+            <p>When afflicted, however, stress may accumulate subtly. The native may avoid confronting tension directly, leading to internal strain. This can affect hormonal balance, reproductive health, or general vitality when emotional pressure is not addressed.</p>
+            <blockquote>the body absorbs what is not expressed in professional life.</blockquote>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Transit From Natal Moon — When Venus Influences the 10th From Chandra Lagna</h3>
+            <p>When Venus activates the 10th house from the natal Moon, through transit or conjunction with Sun transit, the mind becomes focused on public image and professional interaction. The person may feel more aware of how they are perceived and may seek to improve their standing.</p>
+            <p>This is often a favorable period for:<br>professional relationships<br>public presentation<br>creative work<br>social recognition</p>
+            <p>But the shadow remains. The person may become overly concerned with approval or avoid necessary decisions to maintain harmony.</p>
+            <blockquote>visibility increases, but so does sensitivity to opinion.</blockquote>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Present Transit Application</h3>
+            <p>In present transit conditions, when Venus influences the 10th while Sun activates career houses, the native should use this period for refinement rather than expansion alone. It is a time to improve presentation, strengthen relationships, and stabilize professional conduct.</p>
+            <p>The gift of the transit is support through others. The shadow is losing direction by trying to satisfy everyone.</p>
+            <blockquote>cooperation must not replace clarity.</blockquote>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Planetary Influences — How the Result Changes</h3>
+            <p>If Jupiter influences Venus in the 10th, the public image becomes more respected and ethical. The native may gain guidance and support. The shadow is moral display or overconfidence.</p>
+            <p>If Saturn influences Venus, career becomes structured but slower. The native learns through discipline. The shadow is restriction or lack of ease in professional relationships.</p>
+            <p>If Mars influences Venus, ambition increases, but harmony decreases. The gift is drive. The shadow is conflict.</p>
+            <p>If Moon influences Venus, public image becomes emotionally engaging. The shadow is mood affecting reputation.</p>
+            <p>If Mercury influences Venus, communication becomes refined and professional. The shadow is overthinking.</p>
+            <p>If Rahu influences Venus, desire for recognition intensifies. The shadow is instability in reputation.</p>
+            <p>If Ketu influences Venus, detachment from public validation increases. The shadow is lack of direction.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Sign-Wise Behavior of Venus in the 10th</h3>
+            <p><strong>Aries</strong><br>The person seeks recognition through action and bold presentation. Charm becomes direct rather than soft.<br>assertion replaces subtlety.</p>
+            <p><strong>Taurus</strong><br>Public image becomes stable, grounded, and aesthetically pleasing. The person values consistency.<br>comfort becomes a professional standard.</p>
+            <p><strong>Gemini</strong><br>Reputation is built through communication and adaptability. The person thrives in dynamic roles.<br>variety replaces stability.</p>
+            <p><strong>Cancer</strong><br>Public image becomes nurturing and emotionally responsive. The person is perceived as supportive.<br>emotion shapes reputation.</p>
+            <p><strong>Leo</strong><br>The person seeks admiration and recognition in their role. Public life becomes expressive and visible.<br>recognition becomes central.</p>
+            <p><strong>Virgo</strong><br>Reputation is built through precision and service. The person values correctness.<br>perfection replaces ease.</p>
+            <p><strong>Libra</strong><br>Public image becomes balanced and socially appealing. The person thrives in partnership roles.<br>harmony becomes strategy.</p>
+            <p><strong>Scorpio</strong><br>The person maintains a controlled and intense public presence. Influence is subtle but strong.<br>control shapes perception.</p>
+            <p><strong>Sagittarius</strong><br>Reputation is tied to knowledge and expansion. The person seeks meaning in work.<br>belief drives visibility.</p>
+            <p><strong>Capricorn</strong><br>Public image becomes disciplined and structured. The person builds slowly but firmly.<br>effort defines reputation.</p>
+            <p><strong>Aquarius</strong><br>The person presents an unconventional image. Recognition comes through difference.<br>originality shapes status.</p>
+            <p><strong>Pisces</strong><br>Public life becomes fluid and creative. The person is perceived as soft or artistic.<br>imagination influences role.</p>
+
+            <hr style="border: 1px solid var(--border-subtle); margin: 30px 0;">
+
+            <h3>Final Truth</h3>
+            <p>Venus in the 10th house is one of the clearest placements where public life and relational intelligence merge.</p>
+            <p>At its lowest, it becomes:<br>dependence on approval, image management, avoidance of conflict.</p>
+            <p>At its highest, it becomes:<br>graceful authority, respected presence, and the ability to succeed without losing balance.</p>
+            <p>being liked is useful.</p>
+            <p>being grounded is necessary.</p>
+        `,
+        image: "assets/venus_houses.png",
+        category: "Career Astrology"
+    },
+    {
         id: "venus-in-8th-house-love-intimacy-health-transit",
         title: "Venus in the 8th House — Love, Intimacy, Aspects, Health & Transit Effects",
         date: "April 27, 2026",
